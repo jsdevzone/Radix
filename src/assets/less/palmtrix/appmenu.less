@@ -1,0 +1,98 @@
+.appmenu {
+    margin-left: 225px;
+}
+
+.toolbar {
+    margin-bottom: 0;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    height: 38px;
+    padding: 0 2px 0 7px;
+
+    list-style: none;
+    float: left;
+
+    clear: both;
+
+    .toolbar-item {
+        float: left;
+        position: relative;
+        height: 38px;
+        padding: 0;
+        text-align: center;
+        margin-left: 5px;
+
+        display: inline-block;
+        float: left;
+
+        .separator {
+            width: 3px;
+            border-left: solid 1px #D4D4D4;
+            line-height: 24px
+        }
+
+        a {
+            display: block;
+            height: 28px;
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            color: #888;
+            font-size: 12px;
+
+            i {
+                line-height: 24px;
+                color: #888;
+                font-size: 14px;
+                margin-right: 3px;
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: @themeprimary;
+
+                i {
+                    color: @themeprimary;
+                }
+            }
+        }
+    }
+
+    /**
+     * Override the kendo ui menu styles to make it look and feel of the cuurent theme.
+     */
+
+     &.k-header {
+         background-color: transparent;
+     }
+
+     &.k-menu.k-header, &.k-menu .k-item {
+         border-color: transparent;
+     }
+
+    &.k-menu .k-item, &.k-widget.k-menu-horizontal>.k-item {
+        border-width: 0px;
+    }
+
+    &.k-menu .k-item>.k-link, .k-menu.open .k-item>.k-link {
+        display: block;
+        padding: 4px;
+    }
+
+    &.k-menu .k-group .k-item>.k-link {
+        padding: 0.58em 1.8em .38em .5em;
+        text-align: left;
+    }
+
+    ul.ke-group {
+        background-color: red
+    }
+
+    .k-state-hover {
+        &:hover {
+            background-image: none;
+        }
+        background-image: none;
+        background-color: transparent;
+    }
+}
