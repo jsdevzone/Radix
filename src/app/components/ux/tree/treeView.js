@@ -111,7 +111,7 @@ export class TreeNode extends React.Component {
          * When there is no child items default tree node will be rendered.
          */
         let component = (
-            <div tabIndex="-1" 
+            <div tabIndex="-1"
             onClick={this.props.onNodeClick} data-id={this.props.id}
             className={ "tree-item " + (this.props.isSelected ? "tree-selected" : "") }>
                 <i className="tree-dot"></i>
