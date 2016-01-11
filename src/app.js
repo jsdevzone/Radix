@@ -19,6 +19,7 @@ import { ApplicationMenu } from 'ux/appmenu/applicationMenu';
 import { ApplicationSidebar } from 'ux/sidebar/appSidebar';
 import { TileView } from 'ux/tile/tileView';
 import { TileBar } from 'ux/tile/tileBar';
+import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
 /**
  * Load common style sheet
@@ -39,7 +40,7 @@ import 'styles/app.less';
 class Application extends React.Component {
 
     componentDidMount() {
-        console.log(jQuery('div'));
+    
     }
 
     /**
@@ -58,9 +59,7 @@ class Application extends React.Component {
                             Dashboard
                         </div>
                         <div style={{ height:'600px', marginLeft: '260px'}}>
-
                             <TileView />
-<WindowManager />
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,6 @@
           * Transform childrens
           */
          this.props.children.map(child => {
-             console.log(child);
              children.push(child);
          });
 
@@ -65,7 +64,10 @@
                         let activeCls = this.state.selectedIndex == index ? "active" : "";
                         return (
                             <li key={index} className={activeCls} onClick={()=>this.onTabClick(index)}>
-                            <a href="#"  key={index}><i  key={index} className={"fa "+ child.props.icon}/>{child.props.title}</a>
+                                <a href="#"  key={index}>
+                                    <i  key={index} className={"fa "+ child.props.icon}/>
+                                    {child.props.title}
+                                </a>
                             </li>
                         );
                     })
@@ -74,11 +76,19 @@
          );
      }
 
+     /**
+      * @eventhandler
+      * @param {Number} index
+      * @return {Void} undefined
+      */
      onTabClick(index) {
-         console.log('jhgjhg')
          this.setState({ selectedIndex: index });
      }
 
+     /**
+      * Transforms child elements
+      * @return {HTMLDivElement} element
+      */
      transformTabs() {
          return (
             <div className="tab-content tabs-flat">
@@ -88,7 +98,7 @@
                     return React.cloneElement(child, { isActive: isActive, key: index })
                 })
             }
-             </div>
+            </div>
          );
      }
 

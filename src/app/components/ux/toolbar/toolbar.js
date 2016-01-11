@@ -13,13 +13,7 @@
 
  import React from 'react';
  import ReactDOM from 'react-dom';
-
-  /**
-   * Imports react bootstrap component
-   */
- import { Alert } from 'react-bootstrap';
  import KendoMenu from 'imports?$=jquery!kendo-ui-core/src/kendo.menu';
- import { Window, WindowManager, WindowManagerStore } from 'ux/window/Window';
  /**
   * @class Toolbar
   * @extends React.Component
@@ -39,9 +33,7 @@
      }
 
      componentDidMount() {
-         this.el = this.refs['x-toolbar'];
-         $(this.el).kendoMenu();
-
+         $(this.refs.xToolbar).kendoMenu();
      }
 
      /**
@@ -50,7 +42,7 @@
       */
      render() {
          return (
-             <ul className="toolbar" ref="x-toolbar">
+             <ul className="toolbar" ref="xToolbar">
                 { this.props.children }
              </ul>
          );
@@ -72,45 +64,18 @@
          /**
           * @state
           */
-         this.state = {
-             isExpanded: false
-         };
+         this.state = {};
      }
 
+     /**
+      * @lifecycle
+      * @componentDidMount
+      * @return {Void} undefined
+      */
      componentDidMount() {
          this.el = this.refs['x-toolbar-item'];
          if(this.props.children)
-         {
-             //$(this.el).kendoMenu();
-         }
-
-     }
-
-     componentDidUnMount() {
-         document.body.removeEventListener('click', this.onDocumentClick.bind(this));
-     }
-
-     /**
-      * Event handler for on document body click
-      *
-      * @eventhandler
-      * @param {Event} evt
-      * @return {Void} undefined
-      */
-     onDocumentClick(evt) {
-         console.log(evt)
-         //this.setState({ isExpanded: false });
-     }
-
-     /**
-      * Event handler for item click
-      *
-      * @eventhandler
-      * @param {Event} evt
-      * @return {Void} undefined
-      */
-     onToolbarItemClick(evt) {
-         this.setState({ isExpanded: !this.state.isExpanded });
+             $(this.el).kendoMenu();
      }
 
      /**
@@ -120,20 +85,9 @@
      render() {
          let caret = null;
          let className = "toolbar-item";
-
-         /**
-          * If there is a children show the drop down icon. childrens should be menu
-          */
-         if(this.props.children)
-         {
-             caret = (<span className="caret"></span>);
-         }
-
          return (
-             <li ref="x-toolbar-item" onClick={()=>{
-                 WindowManagerStore.add(<Window/>);
-             }} className={className}>
-                <a href="#" onClick={this.onToolbarItemClick.bind(this)}>
+             <li ref="x-toolbar-item" onClick={this.props.onClick} className={className}>
+                <a href="#">
                     <i className={ "menu-icon fa " + (this.props.icon || "fa-picture-o") }></i>
                     <span className="menu-text">{this.props.text || "Purchases"}</span>
                 </a>
