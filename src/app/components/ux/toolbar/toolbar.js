@@ -19,7 +19,7 @@
    */
  import { Alert } from 'react-bootstrap';
  import KendoMenu from 'imports?$=jquery!kendo-ui-core/src/kendo.menu';
-
+ import { Window, WindowManager, WindowManagerStore } from 'ux/window/Window';
  /**
   * @class Toolbar
   * @extends React.Component
@@ -130,7 +130,9 @@
          }
 
          return (
-             <li ref="x-toolbar-item" className={className}>
+             <li ref="x-toolbar-item" onClick={()=>{
+                 WindowManagerStore.add(<Window/>);
+             }} className={className}>
                 <a href="#" onClick={this.onToolbarItemClick.bind(this)}>
                     <i className={ "menu-icon fa " + (this.props.icon || "fa-picture-o") }></i>
                     <span className="menu-text">{this.props.text || "Purchases"}</span>

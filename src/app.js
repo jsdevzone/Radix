@@ -13,13 +13,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Window } from 'ux/window/Window';
+import { Window, WindowManager, WindowManagerStore } from 'ux/window/Window';
 import { Navbar } from 'ux/navbar/navbar';
 import { ApplicationMenu } from 'ux/appmenu/applicationMenu';
 import { ApplicationSidebar } from 'ux/sidebar/appSidebar';
 import { TileView } from 'ux/tile/tileView';
 import { TileBar } from 'ux/tile/tileBar';
-
+import { TabPanel, Tab } from 'ux/tab/tabPanel';
 /**
  * Load common style sheet
  * @bootstrap
@@ -58,9 +58,9 @@ class Application extends React.Component {
                             Dashboard
                         </div>
                         <div style={{ height:'600px', marginLeft: '260px'}}>
-                            <Window />
-                            <TileView />
 
+                            <TileView />
+<WindowManager />
                         </div>
                     </div>
                 </div>

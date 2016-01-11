@@ -10,7 +10,7 @@ $window-title-font-size: 12px;
 $shadow-color: #D4D4D4;
 
 .x-window {
-
+    width: 500px;
     background-color: $window-background-color;
 
     outline: none;
@@ -20,6 +20,8 @@ $shadow-color: #D4D4D4;
 
     font-family: verdana;
     font-size:  $window-default-font-size;
+
+    z-index: 999;
 
     .x-window-title {
         clear: both;
@@ -99,5 +101,5 @@ td {
 }
 
 .form-control {
-    height: 12px;
+    height: 30px;
 }
