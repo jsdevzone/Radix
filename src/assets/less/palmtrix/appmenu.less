@@ -1,5 +1,6 @@
 .appmenu {
-    margin-left: 225px;
+    margin-left: 0;
+    z-index: 999999;
 }
 
 .toolbar {
@@ -25,6 +26,15 @@
 
         display: inline-block;
         float: left;
+
+        &.active {
+            font-weight: normal;
+            background-color: #ffffff;
+            .box-shadow (0px 0px 10px 0px rgba(0, 0, 0, 0.09));
+            border: 1px solid #dedede;
+            border-width: 0 1px;
+            padding: 0 8px 0 8px;
+        }
 
         .separator {
             width: 3px;
@@ -95,4 +105,67 @@
         background-image: none;
         background-color: transparent;
     }
+}
+
+.x-menu {
+    margin: -1px 0 0 0;
+    padding: 7px 0 7px 0;
+    z-index: 10000;
+    position: absolute;
+    overflow: visible;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333333;
+    cursor: default;
+    display: block;
+    z-index: 9999;
+    left: 100px;
+    top: 100px;
+    border: 1px solid #dfdfdf;
+    .box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.09));
+    background-color: #ffffff;
+    text-shadow: none;
+    border-radius: 0 4px 4px 4px;
+
+    & > div.x-menu-item {
+        padding: 4px 22px 4px 26px;
+        white-space: nowrap;
+        cursor: default;
+        z-index: 1100000;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #63acff;
+            color: #ffffff;
+        }
+
+        & > u {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 6px;
+            margin-top: -1px;
+        }
+
+        & > span.shortcut {
+            right: 15px;
+            margin-top: 0px;
+            z-index: 10;
+            text-align: right;
+            padding-left: 15px;
+            float: right;
+        }
+    }
+
+    & > div.x-menu-divider {
+            overflow: visible;
+            padding: 0;
+            font-size: 1px;
+            margin: 6px 9px;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid transparent;
+            height: 0;
+    }
+
 }

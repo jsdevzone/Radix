@@ -20,6 +20,7 @@ import { ApplicationSidebar } from 'ux/sidebar/appSidebar';
 import { TileView } from 'ux/tile/tileView';
 import { TileBar } from 'ux/tile/tileBar';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
+import { Menu, MenuItem } from 'ux/toolbar/menu';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
 /**
  * Load common style sheet
@@ -40,7 +41,7 @@ import 'styles/app.less';
 class Application extends React.Component {
 
     componentDidMount() {
-    
+
     }
 
     /**
@@ -51,14 +52,26 @@ class Application extends React.Component {
         return (
             <div className="ptrix-container">
                 <Navbar />
+                <Menu>
+                    <div className="x-menu">
+                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
+                        <div className="x-menu-divider" />
+                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
+                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
+                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
+                        <div className="x-menu-divider" />
+                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
+                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
+                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
+                        <div className="x-menu-divider" />
+                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
+
+                    </div>
+                </Menu>
                 <div className="main-container container-fluid">
                     <div className="page-container">
-                        <ApplicationSidebar />
                         <ApplicationMenu />
-                        <div style={{ padding: '10px', borderBottom: 'solid 1px #e5e5e5', backgroundColor: '#FFF',paddingLeft: '250px'}}>
-                            Dashboard
-                        </div>
-                        <div style={{ height:'600px', marginLeft: '260px'}}>
+                        <div style={{ height:'600px'}}>
                             <TileView />
                         </div>
                     </div>

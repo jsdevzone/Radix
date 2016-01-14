@@ -13,11 +13,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
-import Draggabilly from 'imports?$=jquery!draggabilly/dist/draggabilly.pkgd';
 import KendoWindow from 'imports?$=jquery!kendo-ui-core/src/kendo.window';
-import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
-import { TabPanel, Tab } from 'ux/tab/tabPanel';
-import dialog from 'jquery-ui/dialog';
+
 import './window.scss';
 
 /**
@@ -35,7 +32,7 @@ import './window.scss';
      defaultWidth: '500px',
 
      /**
-      * Default winows tool actions
+      * Default window tool actions
       * @param {Array<String>} defaultActions
       */
      defaultActions: [
