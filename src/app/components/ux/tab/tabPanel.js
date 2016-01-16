@@ -13,6 +13,8 @@
  import React from 'react';
  import ReactDOM from 'react-dom';
 
+ import './tabs.less';
+
  /**
   * @class TabPanel
   * @extends React.Component
@@ -58,21 +60,23 @@
       */
      renderTabStripes() {
          return (
-             <ul className="nav nav-tabs tabs-flat">
+             <div className="x-tabs-container">
+                 <div className="x-tabs-container-inner">
                 {
                     this.props.children.map((child, index) => {
                         let activeCls = this.state.selectedIndex == index ? "active" : "";
                         return (
-                            <li key={index} className={activeCls} onClick={()=>this.onTabClick(index)}>
-                                <a href="#"  key={index}>
-                                    <i  key={index} className={"fa "+ child.props.icon}/>
-                                    {child.props.title}
-                                </a>
-                            </li>
+                            <div key={index} className="x-tab x-closable  firstbtn  tab0 ">
+                                        <div className="x-tab-shadow"></div>
+                                        <div className="x-tab-middle">
+                                            <div className="x-tab-title">Welcome</div>
+                                        <strong> </strong></div>
+                                    </div>
                         );
                     })
                 }
-             </ul>
+            </div>
+        </div>
          );
      }
 
@@ -91,13 +95,15 @@
       */
      transformTabs() {
          return (
-            <div className="tab-content tabs-flat">
-            {
-                this.props.children.map((child, index) => {
-                    let isActive = this.state.selectedIndex == index;
-                    return React.cloneElement(child, { isActive: isActive, key: index })
-                })
-            }
+            <div className="x-tabs-container">
+                <div className="x-tabs-container-inner">
+                    {
+                        this.props.children.map((child, index) => {
+                            let isActive = this.state.selectedIndex == index;
+                            return React.cloneElement(child, { isActive: isActive, key: index })
+                        })
+                    }
+                </div>
             </div>
          );
      }
@@ -108,10 +114,19 @@
       */
      render() {
          return (
-             <div className="tab-panel">
-                { this.renderTabStripes() }
-                { this.transformTabs() }
-             </div>
+             <div className="editor_tab " style={{ width: 500, height: 500}}>
+                         <div className="btnsesssioncontainer">
+                             <div className="inside  scale" id="525_buttons">
+                                 <div className="session_btn btnclose  lastbtn  curbtn  tab2">
+                                     <div className="tab_shadow"></div>
+                                     <div className="tab_middle">
+                                         <div className="sessiontab_title" title="/php/index.php">index.php</div>
+                                         <strong></strong>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
          );
      }
  }
