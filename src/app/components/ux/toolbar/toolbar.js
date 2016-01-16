@@ -74,8 +74,8 @@
       */
      componentDidMount() {
          this.el = this.refs['x-toolbar-item'];
-         if(this.props.children)
-             $(this.el).kendoMenu();
+         //if(this.props.children)
+            // $(this.el).kendoMenu();
      }
 
      /**
@@ -84,13 +84,14 @@
       */
      render() {
          let caret = null;
-         let className = "toolbar-item active";
+         let className = "toolbar-item";
          return (
              <div ref="x-toolbar-item" onClick={this.props.onClick} className={className}>
-                <a href="#">
+                <div className="toolbar-item-inner" >
                     <i className={ "menu-icon fa " + (this.props.icon || "fa-picture-o") }></i>
                     <span className="menu-text">{this.props.text || "Purchases"}</span>
-                </a>
+                </div>
+                { this.props.children }
              </div>
          );
      }
@@ -120,9 +121,9 @@
       */
      render() {
          return (
-             <li className="toolbar-item">
-                <span className="separator">&nbsp;</span>
-             </li>
+             <div className="toolbar-item toolbar-separator">
+                <span>&nbsp;</span>
+             </div>
          );
      }
  }

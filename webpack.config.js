@@ -1,4 +1,15 @@
-'use strict';
+
+/**
+ * Radix Accounting System
+ * @author Jasim
+ * @company Palmtrix Solutions, Cochin
+ *
+ * Copyright (C) 2015-2016 Palmtrix Solutions <info@palmtrix.com>
+ *
+ * Radix can not be copied and/or distributed without the express
+ * permission of Palmtrix Solutions, Cochin.
+ */
+ 'use strict';
 
 var path = require('path');
 var webpack = require('webpack');
@@ -47,7 +58,8 @@ var config = module.exports = {
 			'font-awesome': path.join(__dirname, './node_modules/font-awesome'),
 			'styles': path.join(__dirname, './src/assets/less'),
 			'ux':  path.join(__dirname, './src/app/components/ux'),
-			'lib': path.join(__dirname, './src/lib')
+			'lib': path.join(__dirname, './src/lib'),
+            'animatecss': path.join(__dirname, './node_modules/animate.css/animate.css')
    		},
         extensions: [ '', '.js', '.jsx', '.css', '.scss', '.less', '.html', '.json' ],
         moduleDirectories: ['node_modules']

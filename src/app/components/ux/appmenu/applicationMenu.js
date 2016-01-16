@@ -39,23 +39,39 @@ export class ApplicationMenu extends React.Component {
             <div className="page-header position-relative appmenu">
                 <Toolbar>
                     <ToolbarItem text="File" icon="fa-th">
-                        <ul>
-                           <li>Tables & Chairs</li>
-                           <li>Sofas</li>
-                           <li>Occasional Furniture</li>
-                           <li>Children's Furniture</li>
-                           <li>Beds</li>
-                       </ul>
+
                     </ToolbarItem>
                     <ToolbarSeparator />
                     <ToolbarItem text="Master" icon="fa-table">
-                        <ul>
-                           <li>Tables & Chairs</li>
-                           <li>Sofas</li>
-                           <li>Occasional Furniture</li>
-                           <li>Children's Furniture</li>
-                           <li>Beds</li>
-                       </ul>
+                        <div className="x-menu">
+                            <div className="x-menu-item">
+                            <u> </u>
+                                <span className="x-menu-text">Process List</span>
+                                <span className="shortcut">⌘ ⌥ P</span>
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                            <u> </u>
+                            <span className="x-menu-text">Edit your configuration</span>
+                            <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                            <u> </u>
+                            <span className="x-menu-text">File</span>
+                            <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                            <u> </u>
+                            <span className="x-menu-text">Configuration</span>
+                            <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            </div>
                     </ToolbarItem>
                     <ToolbarSeparator />
                     <ToolbarItem text="Transactions" icon="fa-calendar" />

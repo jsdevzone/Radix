@@ -22,6 +22,8 @@ import { TileBar } from 'ux/tile/tileBar';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Menu, MenuItem } from 'ux/toolbar/menu';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
+import { CollapsibleSidebar } from 'ux/sidebar/collapsibleSidebar';
+
 /**
  * Load common style sheet
  * @bootstrap
@@ -30,7 +32,7 @@ import { TabPanel, Tab } from 'ux/tab/tabPanel';
  */
 import 'bootstrap/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-
+import 'animatecss';
 import 'styles/app.less';
 
 /**
@@ -52,27 +54,25 @@ class Application extends React.Component {
         return (
             <div className="ptrix-container">
                 <Navbar />
-                <Menu>
-                    <div className="x-menu">
-                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
-                        <div className="x-menu-divider" />
-                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
-                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
-                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
-                        <div className="x-menu-divider" />
-                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
-                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
-                        <div className="x-menu-item"><u></u>Create New Purchase Order</div>
-                        <div className="x-menu-divider" />
-                        <div className="x-menu-item"><u></u>Create New Purchase Order<span className="shortcut">⌘ G</span></div>
-
-                    </div>
-                </Menu>
                 <div className="main-container container-fluid">
                     <div className="page-container">
                         <ApplicationMenu />
-                        <div style={{ height:'600px'}}>
-                            <TileView />
+                        <div style={{ height:'600px', paddingLeft: 50}}>
+
+                        <CollapsibleSidebar>
+                            <div title="Purchase">Purchase</div>
+                            <div title="Sales">Sales</div>
+                            <div title="Finance" >Finance</div>
+                            <div title="Company">Company</div>
+                        </CollapsibleSidebar>
+
+                        <div style={{ paddingTop: 100, marginLeft: 400, width:400 , height: 300}}>
+                        <TabPanel>
+                        <Tab title="jkhjkhk"></Tab>
+                        <Tab title="jkhjkhk"></Tab>
+                        <Tab title="jkhjkhk"></Tab>
+                        </TabPanel>
+                        </div>
                         </div>
                     </div>
                 </div>
