@@ -57,22 +57,22 @@ class Application extends React.Component {
                 <div className="main-container container-fluid">
                     <div className="page-container">
                         <ApplicationMenu />
-                        <div style={{ height:'600px', paddingLeft: 50}}>
-
-                        <CollapsibleSidebar>
-                            <div title="Purchase">Purchase</div>
-                            <div title="Sales">Sales</div>
-                            <div title="Finance" >Finance</div>
-                            <div title="Company">Company</div>
-                        </CollapsibleSidebar>
-
-                        <div style={{ paddingTop: 100, marginLeft: 400, width:400 , height: 300}}>
-                        <TabPanel>
-                        <Tab title="jkhjkhk"></Tab>
-                        <Tab title="jkhjkhk"></Tab>
-                        <Tab title="jkhjkhk"></Tab>
-                        </TabPanel>
-                        </div>
+                        <div className="x-app-container">
+                            <CollapsibleSidebar>
+                                <div title="Purchase" />
+                                <div title="Sales" />
+                                <div title="Finance" />
+                                <div title="Company" />
+                            </CollapsibleSidebar>
+                            <div style={{ flex: 1, backgroundColor: '#D1D1D1'}}>
+                                <TabPanel>
+                                    <Tab title="One" />
+                                    <Tab title="One" />
+                                    <Tab title="One" />
+                                    <Tab title="One" />
+                                    <Tab title="One" />
+                                </TabPanel>
+                            </div>
                         </div>
                     </div>
                 </div>

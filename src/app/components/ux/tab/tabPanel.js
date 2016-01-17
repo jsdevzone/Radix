@@ -114,19 +114,12 @@
       */
      render() {
          return (
-             <div className="editor_tab " style={{ width: 500, height: 500}}>
-                         <div className="btnsesssioncontainer">
-                             <div className="inside  scale" id="525_buttons">
-                                 <div className="session_btn btnclose  lastbtn  curbtn  tab2">
-                                     <div className="tab_shadow"></div>
-                                     <div className="tab_middle">
-                                         <div className="sessiontab_title" title="/php/index.php">index.php</div>
-                                         <strong></strong>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
+             <ul className="list-inline tab-bar inset-panel" tabindex="-1">
+                 <li className="tab sortable active">
+                     <div className="title" >clientInfo.js</div>
+                     <div className="close-icon"></div>
+                 </li>
+        </ul>
          );
      }
  }
