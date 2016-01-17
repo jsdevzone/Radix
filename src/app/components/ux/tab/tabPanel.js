@@ -114,13 +114,39 @@
       */
      render() {
          return (
-             <ul className="list-inline tab-bar inset-panel" tabindex="-1">
-                 <li className="tab sortable active">
-                     <div className="title" >clientInfo.js</div>
-                     <div className="close-icon"></div>
-                 </li>
-        </ul>
-         );
+            <div className="p-tab-panel">
+                <ul style={{paddingLeft: 30}} className="p-list-inline p-tab-bar p-inset-panel" tabindex="-1">
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                    <li className="p-tab">
+                        <div className="p-title" >clientInfo.js</div>
+                        <i className="close-icon fa fa-close"></i>
+                    </li>
+                </ul>
+            </div>
+            );
      }
  }
 
