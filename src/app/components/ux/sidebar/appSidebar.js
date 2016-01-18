@@ -29,9 +29,34 @@ export class ApplicationSidebar extends React.Component {
      */
     render() {
         return (
-            <div className="page-sidebar">
-                <UserProfile />
-                <Sidebar />
+            <div className="p-sidebar">
+                <div className="p-user-profile" />
+                <div className="p-modules">
+                    <div className="p-module-sidebar">
+                        <div className="p-module-sidebar-inner">
+                            <div className="p-module-button">
+                                <i className="fa fa-table"></i>
+                                Company
+                            </div>
+                            <div className="p-module-button">
+                                <i className="fa fa-th"></i>
+                                Purchase
+                            </div>
+                            <div className="p-module-button">
+                                <i className="fa fa-calendar"></i>
+                                Sales
+                            </div>
+                            <div className="p-module-button p-active">
+                                <i className="fa fa-money"></i>
+                                Bank
+                            </div>
+                            <div className="p-module-button">
+                                <i className="fa fa-cog"></i>
+                                Settings
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
