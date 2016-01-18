@@ -3,6 +3,8 @@
     padding: 0 0 0 0;
     margin: 0 0;
     position: relative;
+    flex: 1;
+    display: flex;
 
     .x-tabs-container {
         height: 32px;
@@ -183,7 +185,31 @@
 
 }
 
+.x-tabs-container {
+    -webkit-flex: 1;
+    flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    background-color: white;
+
+    .p-tab-body {
+
+        display:none;
+
+        &.p-active {
+            display: block;
+        }
+    }
+}
+
 .p-tab-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
     .p-tab-bar {
         padding-left: 25px;
         height: 36px;
@@ -195,6 +221,7 @@
         display: -webkit-flex;
         -webkit-user-select: none;
         margin: 0;
+        outline: none;
 
         .p-tab {
             position: relative;
@@ -235,7 +262,6 @@
     }
 }
 
-
 .p-tab-bar .p-tab:before, .p-tab-bar .p-tab:after {
     content: '';
     position: absolute;
@@ -260,7 +286,6 @@
     -webkit-transform: skewX(30deg);
 }
 
-
 .p-tab-bar .p-tab .p-title {
     position: relative;
     z-index: 1;
@@ -268,8 +293,8 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    min-width: 100px;
 }
-
 
 .p-tab-bar .p-tab .close-icon {
     position: absolute;
@@ -320,7 +345,42 @@
     z-index: 1;
     color: #000000;
 }
-.p-tab-bar .p-tab.active {
-    -webkit-flex: 2;
+.p-tab-bar .p-tab.p-active {
     width: -webkit-fit-content;
+}
+
+
+
+.p-tool-panel {
+    font-weight: normal;
+    color: #444444;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    background-color: #f4f4f4;
+    border-top: 1px solid #9f9f9f;
+}
+
+
+.p-status-bar {
+    display: block;
+    font-size: 11px;
+    line-height: 22px;
+    height: 26px;
+    position: relative;
+    -webkit-user-select: none;
+    cursor: default;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: -webkit-min-content;
+}
+
+.p-flexbox-repaint-hack {
+    padding: 0 12.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
 }

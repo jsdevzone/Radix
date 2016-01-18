@@ -24,15 +24,22 @@
      /**
       * @constructor
       */
-     constructor() {
+     constructor(props) {
          super();
 
          /**
           * @state
           */
          this.state = {
-             selectedIndex: 0
+             selectedIndex: 0,
+             items: []
          };
+
+         if(props.children) {
+             props.children.map((item, index) => {
+                 this.state.items.push(item);
+             });
+         }
      }
 
      renderChildren() {
@@ -60,23 +67,19 @@
       */
      renderTabStripes() {
          return (
-             <div className="x-tabs-container">
-                 <div className="x-tabs-container-inner">
-                {
-                    this.props.children.map((child, index) => {
-                        let activeCls = this.state.selectedIndex == index ? "active" : "";
+             <ul style={{paddingLeft: 30}} className="p-list-inline p-tab-bar p-inset-panel" tabIndex="-1">
+             {
+                    this.state.items.map((child, index) => {
+                    let activeCls = this.state.selectedIndex == index ? "p-active" : "";
                         return (
-                            <div key={index} className="x-tab x-closable  firstbtn  tab0 ">
-                                        <div className="x-tab-shadow"></div>
-                                        <div className="x-tab-middle">
-                                            <div className="x-tab-title">Welcome</div>
-                                        <strong> </strong></div>
-                                    </div>
+                            <li className={ "p-tab " + activeCls } onClick={() => this.onTabClick(index)}>
+                                <div className="p-title" >{child.props.title}</div>
+                                <i className="close-icon fa fa-close" onClick={(event) =>{ event.stopPropagation(); event.preventDefault(); this.onTabClose(index)}} ></i>
+                            </li>
                         );
                     })
                 }
-            </div>
-        </div>
+            </ul>
          );
      }
 
@@ -90,6 +93,16 @@
      }
 
      /**
+      * @eventhandler
+      * @param {Number} index
+      * @return {Void} undefined
+      */
+     onTabClose(index) {
+         let items = this.state.items.splice(index, 1);
+         this.setState({ items: this.state.items});
+     }
+
+     /**
       * Transforms child elements
       * @return {HTMLDivElement} element
       */
@@ -98,7 +111,7 @@
             <div className="x-tabs-container">
                 <div className="x-tabs-container-inner">
                     {
-                        this.props.children.map((child, index) => {
+                        this.state.items.map((child, index) => {
                             let isActive = this.state.selectedIndex == index;
                             return React.cloneElement(child, { isActive: isActive, key: index })
                         })
@@ -115,38 +128,10 @@
      render() {
          return (
             <div className="p-tab-panel">
-                <ul style={{paddingLeft: 30}} className="p-list-inline p-tab-bar p-inset-panel" tabindex="-1">
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab p-active">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                    <li className="p-tab">
-                        <div className="p-title" >clientInfo.js</div>
-                        <i className="close-icon fa fa-close"></i>
-                    </li>
-                </ul>
+                { this.renderTabStripes() }
+                { this.transformTabs() }
             </div>
-            );
+        );
      }
  }
 
@@ -174,9 +159,9 @@
        * @return {HTMLDivElement} container
        */
       render() {
-          let cls = "tab-pane";
+          let cls = "p-tab-body";
           if(this.props.isActive)
-            cls += " in active ";
+            cls += " p-active";
           return (
               <div className={cls}>
                  { this.props.children }

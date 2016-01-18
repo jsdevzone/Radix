@@ -54,28 +54,27 @@ class Application extends React.Component {
         return (
             <div className="ptrix-container">
                 <Navbar />
-                <div className="main-container container-fluid">
-                    <div className="page-container">
-                        <ApplicationMenu />
-                        <div className="x-app-container">
-                            <CollapsibleSidebar>
-                                <div title="Purchase" />
-                                <div title="Sales" />
-                                <div title="Finance" />
-                                <div title="Company" />
-                            </CollapsibleSidebar>
-                            <div style={{ flex: 1}}>
-                                <TabPanel>
-                                    <Tab title="One" />
-                                    <Tab title="One" />
-                                    <Tab title="One" />
-                                    <Tab title="One" />
-                                    <Tab title="One" />
-                                </TabPanel>
+                    <ApplicationMenu />
+                    <div className="x-app-container">
+                        <ApplicationSidebar />
+                        <div style={{ flex: 1, display:'flex', flexDirection: 'column'}}>
+                            <TabPanel>
+                                <Tab title="Welcome">
+                                dvfsdfasdfasdf
+                                </Tab>
+                                <Tab title="Purchase Order List">
+                                dvfsdfasdasdasdfasdf
+                                </Tab>
+
+                            </TabPanel>
+                            <div className="p-tool-panel">
+                                <div className="p-status-bar">
+                                    <div className="p-flexbox-repaint-hack"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         );
     }
