@@ -187,7 +187,7 @@
     .p-tab-bar {
         padding-left: 25px;
         height: 36px;
-        background-image: -webkit-linear-gradient(top, #d8d8d8, #efefef);
+        background-image: -webkit-linear-gradient(top, #f3f3f3, #f3f3f3);
         box-shadow: inset 0 -8px 8px -4px rgba(0, 0, 0, 0.15);
         padding: 0 10px 0 25px;
         overflow-x: auto;
@@ -225,7 +225,7 @@
     .p-list-inline {
         padding-left: 0;
         list-style: none;
-        margin-left: -5px;
+        margin-left: 0;
 
         & > li {
             display: inline-block;
@@ -297,4 +297,30 @@
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #b9b9b9;
     pointer-events: none;
+}
+
+.p-tab-bar .p-tab.p-active,
+.p-tab-bar .p-tab.p-active::before,
+.p-tab-bar .p-tab.p-active::after {
+    background: #f0f0f0;
+    height: 27px;
+    box-shadow: none;
+}
+
+.p-tab-bar .p-tab.p-active .p-title {
+    padding-right: 10px;
+}
+
+.p-tab-bar .p-tab.p-active .close-icon {
+    line-height: 25px;
+    color: #444444;
+}
+
+.p-tab-bar .p-tab.p-active {
+    z-index: 1;
+    color: #000000;
+}
+.p-tab-bar .p-tab.active {
+    -webkit-flex: 2;
+    width: -webkit-fit-content;
 }

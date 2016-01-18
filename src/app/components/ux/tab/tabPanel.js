@@ -132,7 +132,7 @@
                         <div className="p-title" >clientInfo.js</div>
                         <i className="close-icon fa fa-close"></i>
                     </li>
-                    <li className="p-tab">
+                    <li className="p-tab p-active">
                         <div className="p-title" >clientInfo.js</div>
                         <i className="close-icon fa fa-close"></i>
                     </li>

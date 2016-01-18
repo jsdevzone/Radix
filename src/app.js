@@ -64,7 +64,7 @@ class Application extends React.Component {
                                 <div title="Finance" />
                                 <div title="Company" />
                             </CollapsibleSidebar>
-                            <div style={{ flex: 1, backgroundColor: '#D1D1D1'}}>
+                            <div style={{ flex: 1}}>
                                 <TabPanel>
                                     <Tab title="One" />
                                     <Tab title="One" />
