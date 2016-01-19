@@ -97,7 +97,7 @@ class Application extends React.Component {
                                         <b className="color-down">
                                             <i className="fa fa-caret-down"></i> 26%</b>
                                             from yesterday
-                                        </span>
+                                    </span>
                                 </li>
                                 <li>
                                     <span className="title">
@@ -105,27 +105,42 @@ class Application extends React.Component {
                                     <h3>$36.45</h3>
                                     <span className="diff">
                                         <b className="color-down">
-                                        <i className="fa fa-caret-down"></i> 26%</b> from yesterday</span>
-                                    </li>
+                                            <i className="fa fa-caret-down"></i> 26%</b> from yesterday</span>
+                                </li>
                             </ul>
                         </div>
-                            <TabPanel>
-                                <Tab title="Welcome">
-                                dvfsdfasdfasdf
-                                </Tab>
-                                <Tab title="Purchase Order List">
-                                dvfsdfasdasdasdfasdf
-                                </Tab>
+                        <TabPanel>
+                            <Tab title="Welcome">
 
-                            </TabPanel>
-                            <div className="p-tool-panel">
-                                <div className="p-status-bar">
-                                    <div className="p-flexbox-repaint-hack"></div>
+                                <div style={{ backgroundColor: '#ECEEF1',    padding: 10, position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', flexDirection: 'row' }}>
+                                    <div className="p-welcome" style={{ flex: 1}}>
+                                        <div className="welcome-logo">
+                                            <img src="assets/images/theme/cloud9_logo.png " />
+                                            <div className="welcome-heading">Welcome</div>
+                                        </div>
+                                    </div>
+                                    <div style={{width: 300 }}>
+                                    </div>
                                 </div>
+
+
+                            </Tab>
+                            <Tab title="Purchase Order List">
+                            dvfsdfasdasdasdfasdf
+                            </Tab>
+
+                        </TabPanel>
+                        <div className="p-tool-panel">
+                            <div className="p-status-bar">
+                                <div className="p-flexbox-repaint-hack"></div>
                             </div>
                         </div>
                     </div>
-                    <div style={{ width: 200 }} />
+                    <div style={{ width: 100, borderLeft: 'solid 1px #DDDDDD'}}>
+                        ssfksjdhfkjsdh
+                    </div>
+                </div>
+
             </div>
         );
     }
