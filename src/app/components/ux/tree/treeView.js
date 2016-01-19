@@ -18,7 +18,7 @@ import ReactDOM from 'react-dom';
  * @class TreeView
  * @extends React.Component
  */
-export class TreeView extends React.Component {
+ export class TreeView extends React.Component {
 
     /**
      * @constructor
@@ -41,8 +41,7 @@ export class TreeView extends React.Component {
          return React.Children.map(this.props.children, (child) => {
              return React.cloneElement(child, {
                  isSelected: true,
-                 id : 'treenode - ' + (++this.id),
-                 onNodeClick: this.props.onNodeClick
+                 id : 'treenode - ' + (++this.id)
              });
          });
      }
@@ -53,8 +52,10 @@ export class TreeView extends React.Component {
      */
     render() {
         return (
-            <div className="sidebar-tree tree">
-                { this.renderChildren() }
+            <div className="p-treepanel">
+                <ol className="p-tree-view p-list-tree p-has-collapsable-children">
+                    { this.renderChildren() }
+                </ol>
             </div>
         );
     }
@@ -95,57 +96,38 @@ export class TreeNode extends React.Component {
      * @return {HTMLDivElement} container
      */
     render() {
-        console.log(this.props.id)
-        /**
-         * Loading spinner to be displayed on  load of child components.
-         */
-        let treeLoaderComponent = (
-            <div tabIndex="-1" className="tree-loader" style={{ display: 'none' }} data-id={this.props.id}>
-                <div className="tree-loading">
-                    <i className="fa fa-rotate-right fa-spin blue"></i>
-                </div>
-            </div>
-        );
-
         /**
          * When there is no child items default tree node will be rendered.
          */
         let component = (
-            <div tabIndex="-1"
-            onClick={this.props.onNodeClick} data-id={this.props.id}
-            className={ "tree-item " + (this.props.isSelected ? "tree-selected" : "") }>
-                <i className="tree-dot"></i>
-                <div className="tree-item-name">
-                    <i className="fa fa-bell gold"></i>
-                    { this.props.text }
+            <li className="p-entry p-list-nested-item">
+                <div className="p-header p-list-item">
+                    <span className="name icon icon-file-directory">{this.props.text}</span>
                 </div>
-            </div>
+                {
+                this.renderSubTree()
+                }
+            </li>
         );
-
-        let icon = this.state.isExpanded ? "fa-folder-open" : "fa-folder";
-
-        if(this.props.children) {
-            component = (
-                <div className="tree-folder" data-id={this.props.id}>
-                    <div className="tree-folder-header" onClick={this.onNodeClick.bind(this)}>
-                        <i className={"blue fa " + icon}></i>
-                        <div className="tree-folder-name">{this.props.text}</div>
-                    </div>
-                    <div className="tree-folder-content" style={{ display: this.state.isExpanded ? "block": "none" }}>
-                        { this.renderChildren() }
-                    </div>
-                    { treeLoaderComponent }
-                </div>
-            );
-        }
 
         return component;
     }
 
+    renderSubTree() {
+        if(this.props.children) {
+            return (
+                <ol className="p-entries p-list-tree">
+                    { this.renderChildren() }
+                </ol>
+            );
+        }
+    }
+
     renderChildren() {
-        return React.Children.map(this.props.children, (child) => {
+        return React.Children.map(this.props.children, (child, index) => {
             return React.cloneElement(child, {
-                onNodeClick: this.props.onNodeClick
+                onNodeClick: this.props.onNodeClick,
+                key: index
             });
         });
     }

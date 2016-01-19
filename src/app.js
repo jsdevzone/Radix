@@ -54,10 +54,61 @@ class Application extends React.Component {
         return (
             <div className="ptrix-container">
                 <Navbar />
-                    <ApplicationMenu />
-                    <div className="x-app-container">
-                        <ApplicationSidebar />
-                        <div style={{ flex: 1, display:'flex', flexDirection: 'column'}}>
+                <ApplicationMenu />
+                <div className="x-app-container">
+                    <ApplicationSidebar />
+                    <div style={{ flex: 1, display:'flex', flexDirection: 'column'}}>
+                        <div style={{ paddingLeft: 10, paddingBottom: 0, backgroundColor: 'white', borderBottom: 'solid 1px #D4D4D4'}}>
+                            <ul className="p-dashboard-statitics clearfix">
+                                <li>
+                                    <span className="title">
+                                        <i className="fa fa-dot-circle-o"></i> Today Profit
+                                    </span>
+                                    <h3>$36.45</h3>
+                                    <span className="diff">
+                                        <b className="color-down">
+                                            <i className="fa fa-caret-down"></i> 26%</b> from yesterday</span>
+                                </li>
+                                <li>
+                                    <span className="title">
+                                        <i className="fa fa-calendar-o"></i> Today Profit
+                                    </span>
+                                    <h3>$36.45</h3>
+                                    <span className="diff">
+                                        <b className="color-up">
+                                            <i className="fa fa-caret-down"></i> 26%</b> from last week
+                                    </span>
+                                </li>
+                                <li>
+                                    <span className="title">
+                                        <i className="fa fa fa-shopping-cart"></i> Total Sales
+                                    </span>
+                                    <h3 className="color-up">696</h3>
+                                    <span className="diff">
+                                        <b className="color-down">
+                                            <i className="fa fa-caret-up"></i> 26%</b> from last month
+                                    </span>
+                                </li>
+                                <li>
+                                    <span className="title">
+                                        <i className="fa fa-clock-o"></i> Visitors</span>
+                                    <h3>960</h3>
+                                    <span className="diff">
+                                        <b className="color-down">
+                                            <i className="fa fa-caret-down"></i> 26%</b>
+                                            from yesterday
+                                        </span>
+                                </li>
+                                <li>
+                                    <span className="title">
+                                        <i className="fa fa-th"></i> Today Profit</span>
+                                    <h3>$36.45</h3>
+                                    <span className="diff">
+                                        <b className="color-down">
+                                        <i className="fa fa-caret-down"></i> 26%</b> from yesterday</span>
+                                    </li>
+                            </ul>
+                        </div>
                             <TabPanel>
                                 <Tab title="Welcome">
                                 dvfsdfasdfasdf
@@ -74,7 +125,7 @@ class Application extends React.Component {
                             </div>
                         </div>
                     </div>
-
+                    <div style={{ width: 200 }} />
             </div>
         );
     }

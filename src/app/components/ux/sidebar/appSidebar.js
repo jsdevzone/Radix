@@ -17,11 +17,57 @@ import { UserProfile } from './userProfile';
 import { TreeView, TreeNode } from '../tree/treeView';
 
 /**
+ * Application Modules here
+ */
+const modules = [
+    { name: 'Company', icon: 'fa-table' },
+    { name: 'Purchase', icon: 'fa-th' },
+    { name: 'Sales', icon: 'fa-calendar' },
+    { name: 'Bank', icon: 'fa-money' },
+    { name: 'Settings', icon: 'fa-cog' }
+];
+
+/**
  * Application's  Sidebar
  * @class Application
  * @extends React.Component
  */
 export class ApplicationSidebar extends React.Component {
+
+    /**
+     * @constructor
+     */
+    constructor() {
+        super();
+
+        /**
+         * @state
+         */
+        this.state = {
+            selectedIndex: 0
+        };
+    }
+
+    /**
+     * renders the sidebar vertical modules bar
+     * @return {HTMLElement} div
+     */
+    renderModuleSidebar() {
+        return (
+            <div className="p-module-sidebar">
+                <div className="p-module-sidebar-inner">
+                {
+                    modules.map((item, index) => {
+                    return <div key={index} onClick={() => { this.setState({ selectedIndex: index })}}
+                                className={"p-module-button " + (this.state.selectedIndex == index ? "p-active": "")}>
+                                <i className={"fa " + item.icon}></i>{item.name}
+                              </div>
+                           })
+                }
+                </div>
+            </div>
+        );
+    }
 
     /**
      * @render
@@ -32,29 +78,16 @@ export class ApplicationSidebar extends React.Component {
             <div className="p-sidebar">
                 <div className="p-user-profile" />
                 <div className="p-modules">
-                    <div className="p-module-sidebar">
-                        <div className="p-module-sidebar-inner">
-                            <div className="p-module-button">
-                                <i className="fa fa-table"></i>
-                                Company
-                            </div>
-                            <div className="p-module-button">
-                                <i className="fa fa-th"></i>
-                                Purchase
-                            </div>
-                            <div className="p-module-button">
-                                <i className="fa fa-calendar"></i>
-                                Sales
-                            </div>
-                            <div className="p-module-button p-active">
-                                <i className="fa fa-money"></i>
-                                Bank
-                            </div>
-                            <div className="p-module-button">
-                                <i className="fa fa-cog"></i>
-                                Settings
-                            </div>
-                        </div>
+                { this.renderModuleSidebar() }
+                    <div className="p-modules-content">
+                        <TreeView>
+                            <TreeNode text="Purchase Order">
+                                <TreeNode text="Create New Order" />
+                            </TreeNode>
+                            <TreeNode text="Purchase Order" />
+                            <TreeNode text="Purchase Order" />
+                            <TreeNode text="Purchase Order" />
+                        </TreeView>
                     </div>
                 </div>
             </div>
