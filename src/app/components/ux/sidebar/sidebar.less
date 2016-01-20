@@ -31,6 +31,8 @@
     .p-modules {
         flex: 1;
         display: flex;
+    }
+}
 
         .p-module-sidebar {
             background-color: @sidebar-background;
@@ -104,6 +106,11 @@
             flex: 1;
             background-color:  #FBFBFB;
         }
+
+
+.p-right {
+    .p-module-sidebar-inner .p-module-button {
+        transform: rotate(360deg);
     }
 }
 
@@ -247,6 +254,7 @@
     padding: 0 0;
     list-style: none;
     margin-bottom: 0;
+    overflow: hidden;
     font-family: 'Open Sans', 'Segoe UI'/*rtl:"Droid Arabic Kufi", "WYekan"*/;
 
     li {
@@ -305,4 +313,132 @@
     top: 30px;
     left: 172px;
     font-weight: normal;
+}
+
+
+.presets {
+    width: 600px;
+}
+
+.p-welcome h3 {
+    font-weight: normal;
+    font-size: 12px;
+    color: gray;
+    border-bottom: 1px solid #DEDEDE;
+    padding-bottom: 4px;
+    margin-bottom: 9px;
+}
+
+
+.p-welcome .preset-container {
+    padding: 10px 10px 0 10px;
+}
+
+
+
+
+
+.p-panel {
+    background: #fbfbfb;
+    border-left: 1px solid #dedede;
+    box-shadow: 0 1px 0 transparent inset;
+    width: 380px;
+    position: relative;
+}
+
+
+.p-scroller {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+}
+
+.p-frame {
+    border-bottom: 1px solid #dedede;
+}
+
+.p-frame > .p-title {
+    box-sizing: border-box;
+    height: 25px;
+    padding: 4px 3px;
+    border-bottom: 1px solid #dedede;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    cursor: default;
+    position: relative;
+    z-index: 100;
+    border-top: 1px solid transparent;
+    box-shadow: 0px 1px 0px transparent;
+    font-size: 12px;
+    color: #333333;
+    background-color: #f1f1f1;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f1f1f1), color-stop(1, #f1f1f1));
+    background-image: -moz-linear-gradient(90deg, #f1f1f1 0%, #f1f1f1 100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.p-frame .p-title i {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.p-frame .p-title span {
+    margin-left: 3px;
+    vertical-align: top;
+}
+
+.p-frame > .p-body {
+    position: relative;
+    min-height: 120px;
+}
+
+
+.p-table {
+    overflow: hidden;
+    font: 12px Tahoma, Arial;
+    cursor: default;
+    /*position: relative;*/
+    white-space: pre;
+    background: #FbFbFb;
+
+    .p-headings {
+        height: 24px;
+        z-index: 10;
+        white-space: nowrap;
+        overflow: hidden;
+        background: #f7f7f7;
+        border-bottom: 1px solid #ececec;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .p-column {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #333333;
+        background: transparent;
+        display: inline-block;
+        padding: 4px 4px 5px 7px;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .p-row {
+        height: 24px;
+        white-space: nowrap;
+    }
 }

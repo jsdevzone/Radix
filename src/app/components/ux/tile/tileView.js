@@ -44,8 +44,8 @@ import { Tile } from './tile';
     componentDidMount() {
         console.log(jQuery)
         var iso = new Packery( '#abcs', {
-            columnWidth: 70,
-  rowHeight: 70
+            columnWidth: 30,
+  rowHeight: 30
         });
 
         let nodes = this.refs.container.childNodes;
@@ -85,7 +85,6 @@ import { Tile } from './tile';
                         <div>Purchase Order</div>
                     </div>
                </Tile>
-               <Tile scale="2h" />
                <Tile>
                     <div className="tile-inner green">
                         <i className="tile-icon fa fa-clock-o"  />
@@ -98,13 +97,6 @@ import { Tile } from './tile';
                         <div>Purchase Order</div>
                     </div>
                </Tile>
-               <Tile scale="2b">
-               <div className="tile-inner">
-               <img src="https://kissflow.com/wp-content/uploads/2014/07/Chart.png" style={{ width: 230, height: 230}} />
-               </div>
-               </Tile>
-
-               <Tile scale="2h" />
                <Tile>
                     <div className="tile-inner blue">
                         <i className="tile-icon fa fa-calendar"  />
