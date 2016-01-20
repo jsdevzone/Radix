@@ -63,7 +63,7 @@ class Application extends React.Component {
                             <ul className="p-dashboard-statitics clearfix">
                                 <li>
                                     <span className="title">
-                                        <i className="fa fa-dot-circle-o"></i> Today Profit dfgdfgdfg
+                                        <i className="fa fa-dot-circle-o"></i> Total Profit
                                     </span>
                                     <h3>$36.45</h3>
                                     <span className="diff">
