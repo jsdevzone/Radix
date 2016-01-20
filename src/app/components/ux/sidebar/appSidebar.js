@@ -76,17 +76,36 @@ export class ApplicationSidebar extends React.Component {
     render() {
         return (
             <div className="p-sidebar">
-                <div className="p-user-profile" />
+                <UserProfile />
                 <div className="p-modules">
                 { this.renderModuleSidebar() }
                     <div className="p-modules-content">
+                        <div style={{height:40, marginBottom: 10 }}>
+                            <input type="text" placeholder="Search your actions..."  style={{
+                                width: '98%',height: 40, border: 'solid 1px transparent',
+                                borderBottom: 'solid 1px #F4F4F4', padding: 10 }}/>
+                        </div>
                         <TreeView>
-                            <TreeNode text="Purchase Order">
-                                <TreeNode text="Create New Order" />
+                            <TreeNode text="Master">
+                                <TreeNode text="Customers" />
+                                <TreeNode text="Vendors" />
+                                <TreeNode text="Product" />
+                                <TreeNode text="Stock" />
                             </TreeNode>
-                            <TreeNode text="Purchase Order" />
-                            <TreeNode text="Purchase Order" />
-                            <TreeNode text="Purchase Order" />
+                            <TreeNode text="Transactions">
+                                <TreeNode text="Purchase Order" />
+                                <TreeNode text="Purchase Return " />
+                                <TreeNode text="Purchase Invoice" />
+                                <TreeNode text="Delivery Challan" />
+                                <TreeNode text="Bill Printing" />
+                            </TreeNode>
+                            <TreeNode text="Reports">
+                                <TreeNode text="Purchase Register" />
+                                <TreeNode text="Inward Register" />
+                                <TreeNode text="Stock Register" />
+                                <TreeNode text="Closing Stock" />
+                                <TreeNode text="Tax Wise Register" />
+                            </TreeNode>
                         </TreeView>
                     </div>
                 </div>

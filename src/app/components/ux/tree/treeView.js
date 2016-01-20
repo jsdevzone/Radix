@@ -99,10 +99,13 @@ export class TreeNode extends React.Component {
         /**
          * When there is no child items default tree node will be rendered.
          */
+
+         let className = this.props.children ? "p-entry p-list-nested-item" : 'p-file p-entry p-list-item ';
+         let textClassName = this.props.children ? "icon-file-directory": "icon-file-text"
         let component = (
-            <li className="p-entry p-list-nested-item">
+            <li className={className}>
                 <div className="p-header p-list-item">
-                    <span className="name icon icon-file-directory">{this.props.text}</span>
+                    <span className={"name icon " + textClassName}>{this.props.text}</span>
                 </div>
                 {
                 this.renderSubTree()

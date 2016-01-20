@@ -26,21 +26,31 @@ export class UserProfile extends React.Component {
      */
     render() {
         return (
-            <div className="sidebar-header-wrapper">
-                <div className="userprofile">
-                    <div className="userprofile-body tabular">
-                        <div className="tabular-row">
-                            <div className="tabular-cell user-avatar">
-                                <a href="#">
-                                    <img src="/assets/images/theme/avatars/John-Smith.jpg" />
-                                </a>
-                            </div>
-                            <div className="tabular-cell user-info">
-                                <span className="welcome-text">Welcome,</span>
-                                <a href="#" className="user-name">Muhammed Jasim</a>
-                            </div>
-                        </div>
+            <div className="p-user-profile">
+                <div className="p-tabular-row">
+                    <div className="p-tabular-cell p-user-avatar">
+                        <a href="#">
+                            <img src="/assets/images/theme/avatars/John-Smith.jpg" />
+                        </a>
                     </div>
+                    <div className="p-tabular-cell user-info">
+                        <span className="welcome-text">Welcome,</span>
+                        <a href="#" className="user-name">Muhammed Jasim</a>
+                    </div>
+                </div>
+                <div style={{padding: 10, textAlign: 'center'}}>
+                    <span className="p-user-profile-action">
+                        <i className="fa fa-cog"></i>
+                    </span>
+                    <span className="p-user-profile-action">
+                        <i className="fa fa-power-off"></i>
+                    </span>
+                    <span className="p-user-profile-action">
+                        <i className="fa fa-user"></i>
+                    </span>
+                    <span className="p-user-profile-action">
+                        <i className="fa fa-key"></i>
+                    </span>
                 </div>
             </div>
         );
