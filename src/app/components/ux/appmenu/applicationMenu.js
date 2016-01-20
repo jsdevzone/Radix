@@ -74,51 +74,313 @@ export class ApplicationMenu extends React.Component {
 
                             </div>
                             <div className="x-menu-divider"/>
-                                <div className="x-menu-item">
+                            <div className="x-menu-item">
 
-                                    <u> </u>
-                                    <span className="x-menu-text">Tax</span>
-                                    <span className="shortcut" >⌘ ⌥ P</span>
+                                <u> </u>
+                                <span className="x-menu-text">Tax</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
 
-                                </div>
                             </div>
+                        </div>
                     </ToolbarItem>
                     <ToolbarSeparator />
-                    <ToolbarItem text="Master" icon="fa-table">
+                    <ToolbarItem text="Transactions" icon="fa-table">
                         <div className="x-menu">
                             <div className="x-menu-item">
                                 <u> </u>
-                                <span className="x-menu-text">Process List</span>
+                                <span className="x-menu-text">Purchase</span>
                                 <span className="shortcut">⌘ ⌥ P</span>
                             </div>
                             <div className="x-menu-divider"/>
                             <div className="x-menu-item">
 
-                            <u> </u>
-                            <span className="x-menu-text">Edit your configuration</span>
-                            <span className="shortcut" >⌘ ⌥ P</span>
+                                <u> </u>
+                                <span className="x-menu-text">Sales</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Inward Material</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
 
                             </div>
                             <div className="x-menu-item">
 
-                            <u> </u>
-                            <span className="x-menu-text">File</span>
-                            <span className="shortcut" >⌘ ⌥ P</span>
+                                <u> </u>
+                                <span className="x-menu-text">Outward Material</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Product Barcode</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
 
                             </div>
                             <div className="x-menu-item">
 
-                            <u> </u>
-                            <span className="x-menu-text">Configuration</span>
-                            <span className="shortcut" >⌘ ⌥ P</span>
+                                <u> </u>
+                                <span className="x-menu-text">Label Printing</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
 
                             </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Delivery Challan</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
                             </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Bill Printing</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Receipt Voucher</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Payment Voucher</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Expense</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                        </div>
                     </ToolbarItem>
                     <ToolbarSeparator />
-                    <ToolbarItem text="Transactions" icon="fa-calendar" />
+                    <ToolbarItem text="Reports" icon="fa-calendar">
+
+                        <div className="x-menu">
+                            <div className="x-menu-item">
+                                <u> </u>
+                                <span className="x-menu-text">Purchase Register</span>
+                                <span className="shortcut">⌘ ⌥ P</span>
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Sales Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Inward Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Outward Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Stock Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Closing Stock</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Godown Wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Tax Wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Product Wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Cash Book Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Expense Wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Party Wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Cash/Credit Sales</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Month wise Party wise Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Bank Book Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Attendance Register</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                        </div>
+                    </ToolbarItem>
                     <ToolbarSeparator />
-                    <ToolbarItem text="Reports" icon="fa-twitter" />
+                    <ToolbarItem text="Accounts" icon="fa-money">
+                        <div className="x-menu">
+                            <div className="x-menu-item">
+                                <u> </u>
+                                <span className="x-menu-text">Receipts</span>
+                                <span className="shortcut">⌘ ⌥ P</span>
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Payments</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Cash/Bank</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Journal</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Bank Record</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Outstanding Reports</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Outstanding Debtors</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Outstanding Creditors</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Reports</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Trial Balance</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-divider"/>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Profile & Loss</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                            <div className="x-menu-item">
+
+                                <u> </u>
+                                <span className="x-menu-text">Balance Sheet</span>
+                                <span className="shortcut" >⌘ ⌥ P</span>
+
+                            </div>
+                        </div>
+                    </ToolbarItem>
                     <ToolbarSeparator />
                     <ToolbarItem text="Settings" icon="fa-cog" />
                     <ToolbarSeparator />
