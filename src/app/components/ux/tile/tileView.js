@@ -43,7 +43,7 @@ import { Tile } from './tile';
      */
     componentDidMount() {
         console.log(jQuery)
-        var iso = new Packery( '#abcs', {
+        var iso = new Packery( this.refs.container, {
             columnWidth: 30,
   rowHeight: 30
         });
@@ -66,7 +66,7 @@ import { Tile } from './tile';
      */
     render() {
         return (
-            <div ref="container" id="abcs" className="tileview">
+            <div ref="container"  className="tileview">
             <Tile>
                  <div className="tile-inner blue">
                      <i className="tile-icon fa fa-table"  />

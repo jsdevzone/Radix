@@ -62,7 +62,7 @@ class Application extends React.Component {
                             <ul className="p-dashboard-statitics clearfix">
                                 <li>
                                     <span className="title">
-                                        <i className="fa fa-dot-circle-o"></i> Today Profit
+                                        <i className="fa fa-dot-circle-o"></i> Today Profit dfgdfgdfg
                                     </span>
                                     <h3>$36.45</h3>
                                     <span className="diff">
@@ -109,6 +109,15 @@ class Application extends React.Component {
                                         <div className="welcome-logo">
                                             <img src="assets/images/theme/cloud9_logo.png " />
                                             <div className="welcome-heading">Welcome</div>
+                                            <div className="presets">
+                                                <h3>Select an action</h3>
+                                                <div className="preset-container">
+
+                                                    <TileView>
+
+                                                    </TileView>
+                                                </div>
+                                            </div>
                                             <div className="presets">
                                             <h3>Select an action</h3>
                                             <div className="preset-container">
