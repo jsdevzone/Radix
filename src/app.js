@@ -144,29 +144,29 @@ class Application extends React.Component {
                                                 </div>
                                                 <div>
                                                     <div className="p-row">
-                                                    <span className="p-column " style={{ width: '50%'}}>Carey Leffler</span>
-                                                    <span className="p-column " style={{ width: '30%'}}>10/12/2014</span>
-                                                    <span className="p-column " style={{ width: '20%'}}>$100.00</span>
+                                                    <span className="p-column " style={{ width: '50%'}}>Beau Basil Dorothy</span>
+                                                    <span className="p-column " style={{ width: '30%'}}>22/12/2014</span>
+                                                    <span className="p-column " style={{ width: '20%'}}>$110.00</span>
                                                     </div>
                                                     <div className="p-row">
-                                                    <span className="p-column " style={{ width: '50%'}}>Russel Esmedilla</span>
-                                                    <span className="p-column " style={{ width: '30%'}}>10/10/2014</span>
-                                                    <span className="p-column " style={{ width: '20%'}}>$450.00</span>
+                                                    <span className="p-column " style={{ width: '50%'}}>Nicholas Diana Brock</span>
+                                                    <span className="p-column " style={{ width: '30%'}}>05/10/2014</span>
+                                                    <span className="p-column " style={{ width: '20%'}}>$600.00</span>
                                                     </div>
                                                     <div className="p-row">
-                                                    <span className="p-column " style={{ width: '50%'}}>Brennan Hagenes</span>
-                                                    <span className="p-column " style={{ width: '30%'}}>10/05/2015</span>
+                                                    <span className="p-column " style={{ width: '50%'}}>Dillon Courtney Teagan</span>
+                                                    <span className="p-column " style={{ width: '30%'}}>20/05/2015</span>
                                                     <span className="p-column " style={{ width: '20%'}}>$120.00</span>
                                                     </div>
                                                     <div className="p-row">
-                                                    <span className="p-column " style={{ width: '50%'}}>Nikolas Rau</span>
+                                                    <span className="p-column " style={{ width: '50%'}}>Lareina Ursa</span>
                                                     <span className="p-column " style={{ width: '30%'}}>10/02/2014</span>
-                                                    <span className="p-column " style={{ width: '20%'}}>$250.00</span>
+                                                    <span className="p-column " style={{ width: '20%'}}>$700.00</span>
                                                     </div>
                                                     <div className="p-row">
-                                                    <span className="p-column " style={{ width: '50%'}}>Brandyn Larkin</span>
-                                                    <span className="p-column " style={{ width: '30%'}}>05/05/2013</span>
-                                                    <span className="p-column " style={{ width: '20%'}}>$375.25</span>
+                                                    <span className="p-column " style={{ width: '50%'}}>QuembyKaryn Oma</span>
+                                                    <span className="p-column " style={{ width: '30%'}}>01/05/2013</span>
+                                                    <span className="p-column " style={{ width: '20%'}}>$400.25</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,22 +233,22 @@ class Application extends React.Component {
                                                 <span className="p-column " style={{ width: '20%'}}>$100.00</span>
                                                 </div>
                                                 <div className="p-row">
-                                                <span className="p-column " style={{ width: '50%'}}>Russel Esmedilla</span>
+                                                <span className="p-column " style={{ width: '50%'}}>GradyHilel, Nerea</span>
                                                 <span className="p-column " style={{ width: '30%'}}>10/10/2014</span>
                                                 <span className="p-column " style={{ width: '20%'}}>$450.00</span>
                                                 </div>
                                                 <div className="p-row">
-                                                <span className="p-column " style={{ width: '50%'}}>Brennan Hagenes</span>
+                                                <span className="p-column " style={{ width: '50%'}}>Emerald Hagenes</span>
                                                 <span className="p-column " style={{ width: '30%'}}>10/05/2015</span>
                                                 <span className="p-column " style={{ width: '20%'}}>$120.00</span>
                                                 </div>
                                                 <div className="p-row">
-                                                <span className="p-column " style={{ width: '50%'}}>Nikolas Rau</span>
+                                                <span className="p-column " style={{ width: '50%'}}>Nikolas SybillRau</span>
                                                 <span className="p-column " style={{ width: '30%'}}>10/02/2014</span>
                                                 <span className="p-column " style={{ width: '20%'}}>$250.00</span>
                                                 </div>
                                                 <div className="p-row">
-                                                <span className="p-column " style={{ width: '50%'}}>Brandyn Larkin</span>
+                                                <span className="p-column " style={{ width: '50%'}}>Jin Arthur</span>
                                                 <span className="p-column " style={{ width: '30%'}}>05/05/2013</span>
                                                 <span className="p-column " style={{ width: '20%'}}>$375.25</span>
                                                 </div>
