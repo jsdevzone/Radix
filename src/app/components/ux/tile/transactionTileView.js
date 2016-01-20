@@ -20,10 +20,10 @@ import KendoWindow from 'imports?$=jquery!kendo-ui-core/src/kendo.window';
 import { Tile } from './tile';
 
 /**
- * @class TileView
+ * @class TransactionTileView
  * @extends React.Component
  */
- export class TileView extends React.Component {
+ export class TransactionTileView extends React.Component {
 
     /**
      * @constructor
@@ -68,39 +68,39 @@ import { Tile } from './tile';
         return (
             <div ref="container"  className="tileview">
             <Tile>
-                  <div className="tile-inner green">
-                     <i className="tile-icon fa fa-table"  />
-                     <div>Company</div>
+                  <div className="tile-inner blue">
+                     <i className="tile-icon fa fa-cart-arrow-down"  />
+                     <div>Purchase Order</div>
                   </div>
             </Tile>
             <Tile>
-                 <div className="tile-inner blue">
-                     <i className="tile-icon fa fa-table"  />
-                     <div>Customer</div>
+                 <div className="tile-inner green">
+                     <i className="tile-icon fa fa-suitcase"  />
+                     <div>Sales Order</div>
                  </div>
             </Tile>
             <Tile>
-                 <div className="tile-inner red">
-                     <i className="tile-icon fa fa-save"  />
-                     <div>Product</div>
+                 <div className="tile-inner">
+                     <i className="tile-icon fa fa-barcode"  />
+                     <div>Product Barcode</div>
                  </div>
             </Tile>
                <Tile>
-                    <div className="tile-inner">
-                        <i className="tile-icon fa fa-file-text"  />
-                        <div>Stock</div>
+                    <div className="tile-inner red">
+                        <i className="tile-icon fa fa-arrow-circle-o-down"  />
+                        <div>Inward Material</div>
                     </div>
                </Tile>
                <Tile>
                     <div className="tile-inner green">
-                        <i className="tile-icon fa fa-calculator"  />
-                        <div>Tax</div>
+                        <i className="tile-icon fa fa-arrow-circle-o-up"  />
+                        <div>Outward Material</div>
                     </div>
                </Tile>
                <Tile>
-                    <div className="tile-inner red">
-                        <i className="tile-icon fa fa-cog"  />
-                        <div>Settings</div>
+                    <div className="tile-inner black">
+                        <i className="tile-icon fa fa-credit-card"  />
+                        <div>Payment Voucher</div>
                     </div>
                </Tile>
            </div>

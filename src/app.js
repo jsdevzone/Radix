@@ -18,6 +18,7 @@ import { Navbar } from 'ux/navbar/navbar';
 import { ApplicationMenu } from 'ux/appmenu/applicationMenu';
 import { ApplicationSidebar } from 'ux/sidebar/appSidebar';
 import { TileView } from 'ux/tile/tileView';
+import { TransactionTileView } from 'ux/tile/transactionTileView'
 import { TileBar } from 'ux/tile/tileBar';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Menu, MenuItem } from 'ux/toolbar/menu';
@@ -114,17 +115,15 @@ class Application extends React.Component {
                                                 <div className="preset-container">
 
                                                     <TileView>
-
                                                     </TileView>
                                                 </div>
                                             </div>
-                                            <div className="presets">
+                                            <div className="presets" style = {{marginTop: '-18px'}}>
                                             <h3>Select an action</h3>
                                             <div className="preset-container">
 
-                                                <TileView>
-
-                                                </TileView>
+                                              <TransactionTileView>
+                                              </TransactionTileView>
                                             </div>
                                             </div>
                                         </div>
