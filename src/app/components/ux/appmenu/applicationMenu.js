@@ -14,7 +14,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 
+import { Window } from 'ux/window/window';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
+import { Customer } from 'app/lookups/customer/customer';
 
 /**
  * Application Menu
@@ -28,6 +30,10 @@ export class ApplicationMenu extends React.Component {
      */
     constructor(args) {
         super(args);
+    }
+
+    onMenuClick() {
+        Window.show(<Customer/>, { title: 'Customer', height: 500, width: 700 });
     }
 
     /**
@@ -51,8 +57,7 @@ export class ApplicationMenu extends React.Component {
                                 <span className="shortcut">Ctrl + F</span>
                             </div>
                             <div className="x-menu-divider"/>
-                            <div className="x-menu-item">
-
+                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this)}>
                                 <u><i className="fa fa-user" style={{ color: '#62B2FF'}} /> </u>
                                 <span className="x-menu-text">Customer</span>
                                 <span className="shortcut" >Ctrl + O</span>

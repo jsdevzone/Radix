@@ -108,7 +108,7 @@
       */
      transformTabs() {
          return (
-            <div className="x-tabs-container">
+            <div className="x-tabs-container" >
                 <div className="x-tabs-container-inner">
                     {
                         this.state.items.map((child, index) => {
@@ -127,7 +127,7 @@
       */
      render() {
          return (
-            <div className="p-tab-panel">
+            <div className="p-tab-panel" style={this.props.style}>
                 { this.renderTabStripes() }
                 { this.transformTabs() }
             </div>

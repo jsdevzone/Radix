@@ -27,13 +27,19 @@ import './window.scss';
 
      /**
       * Default Width
-      * @param {String} defaultWidth
+      * @property {String} defaultWidth
       */
      defaultWidth: '500px',
 
      /**
+      * Default Width
+      * @property {String} defaultHeight
+      */
+     defaultHeight: '500px',
+
+     /**
       * Default window tool actions
-      * @param {Array<String>} defaultActions
+      * @property {Array<String>} defaultActions
       */
      defaultActions: [
          "Minimize", "Maximize", "Close"
@@ -47,6 +53,7 @@ import './window.scss';
 
          let config = {
              width: options.width || this.defaultWidth,
+             height: options.height || this.defaultHeight,
              title: options.title || null,
              actions: this.defaultActions,
              position:{

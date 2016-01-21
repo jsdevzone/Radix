@@ -57,6 +57,7 @@ var config = module.exports = {
 	   		'bootstrap': path.join(__dirname, './node_modules/bootstrap/dist'),
 			'font-awesome': path.join(__dirname, './node_modules/font-awesome'),
 			'styles': path.join(__dirname, './src/assets/less'),
+            'app':  path.join(__dirname, './src/app/components/app'),
 			'ux':  path.join(__dirname, './src/app/components/ux'),
 			'lib': path.join(__dirname, './src/lib'),
             'animatecss': path.join(__dirname, './node_modules/animate.css/animate.css')
