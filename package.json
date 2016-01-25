@@ -30,9 +30,13 @@
     "react-addons": "^0.9.0",
     "react-addons-pure-render-mixin": "^0.14.5",
     "react-bootstrap": "^0.28.1",
+<<<<<<< HEAD
     "react-datepicker": "^0.18.0",
     "react-dom": "0.14.3",
     "react-pivot": "^1.13.0",
+=======
+    "react-dom": "0.14.3",
+>>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
     "react-routing": "0.0.6",
     "source-map-support": "0.4.0",
     "uuid": "^2.0.1"

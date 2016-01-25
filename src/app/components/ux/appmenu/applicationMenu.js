@@ -13,6 +13,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
+<<<<<<< HEAD
 import { Window } from 'ux/window/window';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Customer } from 'app/lookups/customer/customer';
@@ -23,6 +24,13 @@ import { DeliveryNote } from 'app/transaction/DeliveryNote';
 import { Invoice } from 'app/transaction/Invoice';
 import { ProFormaInvoice } from 'app/transaction/ProFormaInvoice';
 import { PurchaseOrder } from 'app/purchase/PurchaseOrder'
+=======
+
+import { Window } from 'ux/window/window';
+import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
+import { Customer } from 'app/lookups/customer/customer';
+
+>>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
 /**
  * Application Menu
  *
@@ -37,8 +45,13 @@ export class ApplicationMenu extends React.Component {
         super(args);
     }
 
+<<<<<<< HEAD
     onMenuClick(className) {
         Window.show(<PurchaseOrder />, { title: className, height: 500, width: 700 });
+=======
+    onMenuClick() {
+        Window.show(<Customer/>, { title: 'Customer', height: 500, width: 700 });
+>>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
     }
 
     /**
@@ -51,7 +64,11 @@ export class ApplicationMenu extends React.Component {
                 <Toolbar>
                     <ToolbarItem text="Party Master" icon="fa-th">
                         <div className="x-menu">
+<<<<<<< HEAD
                             <div className="x-menu-item" onClick={this.onMenuClick.bind(this,"PurchaseOrder")}>
+=======
+                            <div className="x-menu-item">
+>>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
                                 <u> </u>
                                 <span className="x-menu-text">Company</span>
                                 <span className="shortcut">Ctrl + C</span>
