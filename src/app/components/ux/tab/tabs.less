@@ -1,0 +1,386 @@
+.x-tab-panel {
+    background: #fbfbfb;
+    padding: 0 0 0 0;
+    margin: 0 0;
+    position: relative;
+    flex: 1;
+    display: flex;
+
+    .x-tabs-container {
+        height: 32px;
+        color: #f5f5f5;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        background: #fbfbfb;
+        box-shadow: 0 -1px 0 0 #dedede inset, 0 1px 0 0 transparent inset, 0 1px 0 transparent;
+        border: 1px solid #dedede;
+        border-width: 1px 1px 0 1px;
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: -1px;
+        z-index: 100;
+        clip: rect(0, 3000px, 35px, 0px);
+        transition-property: padding-right;
+        margin-bottom: 1px;
+
+        .x-tabs-container-inner {
+            max-width: 100%;
+            padding: 5px 6px 0 23px;
+            height: 27px;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+
+        .x-tab {
+            min-width: 6px;
+            max-width: 97px;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 0;
+            line-height: 1.2em;
+            padding: 0 37px;
+            position: relative;
+            margin-right: -25px;
+            margin-top: 0;
+            height: 26px;
+            overflow: hidden;
+            cursor: default;
+
+            .x-tab-middle, .x-tab-shadow {
+                height: 26px;
+                box-sizing: border-box;
+                position: relative;
+                padding: 5px 0 0 0;
+                overflow: visible;
+                color: #000;
+                background-image: url(https://d6ff1xmuve0sx.cloudfront.net/nc-3.1.1055-7934a397/static/plugins/c9.ide.layout.classic/images/c9-repeat-x_flat_light.png);
+                background-repeat: repeat-x;
+                background-position: 0 -84px;
+                display : block;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                white-space : nowrap;
+                margin-top: 2px;
+                margin-left: -1px;
+                margin-right: -1px;
+
+                &::after, &::before {
+                    background-color: inherit;
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 26px;
+                    background-image: url(https://d6ff1xmuve0sx.cloudfront.net/nc-3.1.1055-7934a397/static/plugins/c9.ide.layout.classic/images/c9-no-repeat_flat_light.png);
+                    background-repeat: no-repeat;
+                    top: 0;
+                }
+            }
+
+            .x-tab-shadow {
+                 position: absolute;
+                 margin: 0;
+                 top: 0;
+                 left: 36px;
+                 right: 38px;
+                 bottom: 0;
+                 background-position: 0 -1354px;
+                 opacity: 0.7;
+
+                 &::before {
+                     left: -36px;
+                     background-position: 0 -123px;
+                     opacity: 0.7;
+                     width: 36px;
+                 }
+
+                 &::after {
+                     right: -38px;
+                     background-position: -42px -123px;
+                     opacity: 0.7;
+                     width: 38px;
+                 }
+            }
+
+            &:not(.x-tab-active) {
+                .x-tab-middle {
+                    &::after, &::before {
+                        background-color: #fcfcfc;
+                        -webkit-transition: background-color 0.15s linear;
+                    }
+                }
+            }
+
+
+            .x-tab-middle {
+                &::after {
+                    right: -38px;
+                    background-position: -42px -125px;
+                    -webkit-mask-position: -42px -95px;
+                    mask: url(#tab-mask-right);
+                    width: 38px;
+                }
+
+                &::after, &::before {
+                    -webkit-mask: url("https://d6ff1xmuve0sx.cloudfront.net/nc-3.1.1055-7934a397/static/plugins/c9.ide.layout.classic/images/c9-no-repeat_flat_light@2x.png") no-repeat;
+                    -webkit-mask-size: 480px 580px;
+                }
+            }
+
+            .x-tab-title {
+                display: block;
+                /* position: absolute; */
+                /* text-overflow: ellipsis; */
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 1px 0 0 0;
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select: none;
+                color: #333333;
+                text-shadow: none;
+
+                strong {
+                    width: 14px;
+                    height: 14px;
+                    display: block;
+                    position: absolute;
+                    right: -8px;
+                    top: 7px;
+                    background-image: url(https://d6ff1xmuve0sx.cloudfront.net/nc-3.1.1055-7934a397/static/plugins/c9.ide.layout.classic/images/close_tab_btn_flat_light.png);
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    cursor: pointer;
+                    z-index: 10;
+                    margin-top: -1px;
+                    -webkit-animation: none;
+                    -moz-animation: none;
+                    -o-animation: none;
+                    -ms-animation: none;
+                    animation: none;
+                }
+            }
+
+            &.x-closable {
+                .x-tab-title {
+                    margin-right: 6px;
+                    margin-left: -4px;
+                    position: relative;
+                    z-index: 1000;
+                }
+            }
+        }
+
+    }
+
+}
+
+.x-tabs-container {
+    -webkit-flex: 1;
+    flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    background-color: white;
+
+    .p-tab-body {
+
+        display:none;
+
+        &.p-active {
+            display: block;
+        }
+    }
+}
+
+.p-tab-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .p-tab-bar {
+        padding-left: 25px;
+        height: 36px;
+        background-image: -webkit-linear-gradient(top, #f3f3f3, #f3f3f3);
+        box-shadow: inset 0 -8px 8px -4px rgba(0, 0, 0, 0.15);
+        padding: 0 10px 0 25px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: -webkit-flex;
+        -webkit-user-select: none;
+        margin: 0;
+        outline: none;
+
+        .p-tab {
+            position: relative;
+            top: 5px;
+            max-width: 160px;
+            height: 26px;
+            line-height: 26px;
+            color: #444444;
+            padding: 0;
+            margin: 0 20px 0 5px;
+            box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.05);
+            transition: color 0.1s ease-in;
+            -webkit-user-drag: element;
+            min-width: 40px;
+            font-size: 11px;
+        }
+
+        .p-tab, .p-tab::before, .p-tab::after {
+            background-image: -webkit-linear-gradient(top, #e8e8e8, #d9d9d9);
+            border-top: 1px solid #b9b9b9;
+        }
+
+    }
+    .p-inset-panel {
+        position: relative;
+        background-color: #ffffff;
+    }
+    .p-list-inline {
+        padding-left: 0;
+        list-style: none;
+        margin-left: 0;
+
+        & > li {
+            display: inline-block;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+}
+
+.p-tab-bar .p-tab:before, .p-tab-bar .p-tab:after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    width: 25px;
+    height: 26px;
+}
+
+.p-tab-bar .p-tab:before {
+    left: -14px;
+    border-top-left-radius: 3px;
+    border-left: 1px solid #b9b9b9;
+    box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.05);
+    -webkit-transform: skewX(-30deg);
+}
+
+.p-tab-bar .p-tab:after {
+    right: -14px;
+    border-top-right-radius: 3px;
+    border-right: 1px solid #b9b9b9;
+    box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.05);
+    -webkit-transform: skewX(30deg);
+}
+
+.p-tab-bar .p-tab .p-title {
+    position: relative;
+    z-index: 1;
+    padding-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 100px;
+}
+
+.p-tab-bar .p-tab .close-icon {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    cursor: default;
+}
+.p-tab-bar .p-tab .close-icon {
+    right: 0;
+    z-index: 3;
+    text-align: right;
+    line-height: 26px;
+    color: #444444;
+}
+
+
+.p-tab-bar:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #b9b9b9;
+    pointer-events: none;
+}
+
+.p-tab-bar .p-tab.p-active,
+.p-tab-bar .p-tab.p-active::before,
+.p-tab-bar .p-tab.p-active::after {
+    background: #f0f0f0;
+    height: 27px;
+    box-shadow: none;
+}
+
+.p-tab-bar .p-tab.p-active .p-title {
+    padding-right: 10px;
+}
+
+.p-tab-bar .p-tab.p-active .close-icon {
+    line-height: 25px;
+    color: #444444;
+}
+
+.p-tab-bar .p-tab.p-active {
+    z-index: 1;
+    color: #000000;
+}
+.p-tab-bar .p-tab.p-active {
+    width: -webkit-fit-content;
+}
+
+
+
+.p-tool-panel {
+    font-weight: normal;
+    color: #444444;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    background-color: #f4f4f4;
+    border-top: 1px solid #9f9f9f;
+}
+
+
+.p-status-bar {
+    display: block;
+    font-size: 11px;
+    line-height: 22px;
+    height: 26px;
+    position: relative;
+    -webkit-user-select: none;
+    cursor: default;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: -webkit-min-content;
+}
+
+.p-flexbox-repaint-hack {
+    padding: 0 12.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,247 @@
+
+.appmenu {
+    z-index: 9999;
+    margin-left: 0;
+    padding-left: 25px;
+    background-image: linear-gradient(to right, #f4f4f4, #f4f4f4)
+}
+
+.toolbar {
+    margin-bottom: 0;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    height: 38px;
+    padding: 0 2px 0 7px;
+    position: relative;
+
+    list-style: none;
+    float: left;
+    z-index: 20;
+
+    clear: both;
+
+    .toolbar-item {
+        position: relative;
+        float: left;
+        position: relative;
+        height: 38px;
+        padding: 0;
+        text-align: center;
+        margin-left: 5px;
+
+        display: inline-block;
+        float: left;
+
+        &.toolbar-separator {
+
+            padding-top: 6px;
+
+            & > span {
+                width: 3px;
+                border-left: solid 1px #D4D4D4;
+                line-height: 24px;
+                margin-top: 8px;
+            }
+        }
+
+        &:hover {
+
+            .toolbar-item-inner {
+                background-color: #ffffff;
+                /*.box-shadow (0px 0px 10px 0px rgba(0, 0, 0, 0.09));*/
+                border: 1px solid #dedede;
+                border-width: 0 1px;
+            }
+
+            .x-menu {
+                display: block;
+            }
+        }
+
+
+        .toolbar-item-inner {
+            display: block;
+            height: 38px;
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            color: #888;
+            z-index: 15;
+            position: relative;
+            font-size: 12px;
+            padding: 5px 8px 0 8px;
+
+
+
+            i {
+                line-height: 24px;
+                color: #888;
+                font-size: 14px;
+                margin-right: 3px;
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: @themeprimary;
+
+                i {
+                    color: @themeprimary;
+                }
+            }
+        }
+    }
+
+    /**
+     * Override the kendo ui menu styles to make it look and feel of the cuurent theme.
+     */
+
+     &.k-header {
+         background-color: transparent;
+     }
+
+     &.k-menu.k-header, &.k-menu .k-item {
+         border-color: transparent;
+     }
+
+    &.k-menu .k-item, &.k-widget.k-menu-horizontal>.k-item {
+        border-width: 0px;
+    }
+
+    &.k-menu .k-item>.k-link, .k-menu.open .k-item>.k-link {
+        display: block;
+        padding: 4px;
+    }
+
+    &.k-menu .k-group .k-item>.k-link {
+        padding: 0.58em 1.8em .38em .5em;
+        text-align: left;
+    }
+
+    ul.ke-group {
+        background-color: red
+    }
+
+    .k-state-hover {
+        &:hover {
+            background-image: none;
+        }
+        background-image: none;
+        background-color: transparent;
+    }
+}
+
+.x-menu {
+    display: none;
+    z-index: 10;
+    margin: -2px 0 0 0;
+    padding: 7px 0 7px 0;
+    position: absolute;
+    overflow: visible;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333333;
+    cursor: default;
+    left: 0;
+    top: 100%;
+    border: 1px solid #dfdfdf;
+    .box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.09));
+    background-color: #ffffff;
+    text-shadow: none;
+    border-radius: 0 4px 4px 4px;
+    clear: both;
+
+    & > div.x-menu-item {
+        padding: 4px 22px 4px 10px;
+        white-space: nowrap;
+        cursor: default;
+        z-index: 1100000;
+        cursor: pointer;
+        display: flex;
+
+        &:hover {
+            background-color: #63acff;
+            color: #ffffff;
+        }
+
+        & > u {
+            width: 16px;
+            height: 16px;
+            margin-top: 0;
+            margin-right: 5px;
+        }
+
+        & > span.x-menu-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        & > span.shortcut {
+
+            margin-top: 0px;
+            z-index: 10;
+            text-align: right;
+            padding-left: 15px;
+        }
+    }
+
+    & > div.x-menu-divider {
+            overflow: visible;
+            padding: 0;
+            font-size: 1px;
+            margin: 6px 9px;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid transparent;
+            height: 0;
+    }
+
+}
+
+
+.panelsbar {
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent;
+    box-shadow: 0 -1px 0 #dedede;
+    -webkit-transform-origin: 17px 18px;
+    -moz-transform-origin: 17px 18px;
+    -o-transform-origin: 17px 18px;
+    -ms-transform-origin: 17px 18px;
+    transform-origin: 17px 18px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background: #f1f1f1;
+    height: 60px;
+    white-space: nowrap;
+    position: absolute;
+    top: -1px;
+    width: 10000px;
+    z-index: 10000;
+}
+
+
+.panelsbutton {
+    padding: 10px 10px 6px 10px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: default;
+    margin-left: -1px;
+    margin-right: 2px;
+    margin-top: -1;
+    font-family: Helvetica, Arial;
+    font-size: 13px;
+    color: #333333;
+    text-shadow: 0 0 1px white;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+    &:hover {
+        background-color: #F4F4F4;
+        background: #f3F3f3;
+    }
+}

@@ -1,0 +1,75 @@
+
+.tileview {
+
+    .tile {
+        background-color: white;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+
+
+        &:active {
+            .box-shadow( 0 0 10px 0 @black2);
+            z-index: 999;
+        }
+
+        &.scale-1 {
+            width: 80px;
+            height: 80px;
+
+            .tile-inner {
+
+                .tile-icon {
+                    font-size: 25px;
+                }
+
+            }
+        }
+
+        &.scale-2-horizontal {
+            width: 270px;
+            height: 130px;
+        }
+
+        &.scale-2-vertical {
+            height: 270px;
+            width: 130px;
+        }
+
+        &.scale-2-both {
+            width: 270px;
+            height: 270px
+        }
+
+        .tile-inner {
+            text-align: center;
+            color: #78507D;
+            font-family: Tahoma;
+
+            &.green {
+                color: #4CA772;
+            }
+
+            &.blue {
+                color: #3133A0;
+            }
+
+            &.red {
+                color: #D64E4E;
+            }
+
+            .tile-icon {
+                margin-bottom: 6px;
+            }
+
+        }
+    }
+
+}
+
+.tilebar {
+    margin: 10px;
+    height: 40px;
+    background-color: #FFF;
+
+}
