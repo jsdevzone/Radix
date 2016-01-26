@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Radix Accounting System
  * @author Jasim
@@ -9,18 +8,13 @@
  * Radix can not be copied and/or distributed without the express
  * permission of Palmtrix Solutions, Cochin.
  */
- 
-=======
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
+
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
-<<<<<<< HEAD
 import { FormToolbar } from 'ux/toolbar/formToolbar'
-=======
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
 /**
  * Custom Class Header
  *
@@ -47,58 +41,7 @@ import { FormToolbar } from 'ux/toolbar/formToolbar'
      render() {
          return (
              <div>
-<<<<<<< HEAD
                <FormToolbar />
-=======
-                 <div className="p-toolbar">
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-th" />
-                         <span>Add New Customer</span>
-                     </a>
-                     <span className="p-toolbar-separator" />
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-pencil" />
-                         <span>Edit</span>
-                     </a>
-                     <span className="p-toolbar-separator" />
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-floppy-o" />
-                         <span>Save</span>
-                     </a>
-                     <span className="p-toolbar-separator" />
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-times" />
-                         <span>Cancel</span>
-                     </a>
-                     <span className="p-toolbar-separator" />
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-trash" />
-                         <span>Delete</span>
-                     </a>
-                     <div style={{ flex: 1}} />
-                     <input type="text" />
-                     <a className="p-toolbar-button">
-                         <i className="fa fa-search" />
-                         <span>Search</span>
-                     </a>
-                 </div>
-                 <div className="p-window-buttons">
-                     <a className="p-button">
-                         <i className="fa fa-question" />
-                         <span>Help</span>
-                     </a>
-                     <div style={{flex:1}} />
-                     <a className="p-button" style={{marginRight: 5}}>
-                         <i className="fa fa-list" />
-                         <span>List</span>
-                     </a>
-                     <a className="p-button">
-                         <i className="fa fa-times" />
-                         <span>Close</span>
-                     </a>
-                 </div>
-
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
                  <div style={{padding: 10}}>
                      <div style={{marginBottom: 6}}>
                          <div style={{ display: 'table-cell', width: 100}}>
@@ -125,11 +68,6 @@ import { FormToolbar } from 'ux/toolbar/formToolbar'
                          </Tab>
                      </TabPanel>
                  </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
                  </div>
              );
      }

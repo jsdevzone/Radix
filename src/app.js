@@ -263,7 +263,6 @@ class Application extends React.Component {
 
                             </Tab>
                             <Tab title="Purchase Order List">
-                            dvfsdfasdasdasdfasdf
                             </Tab>
 
                         </TabPanel>

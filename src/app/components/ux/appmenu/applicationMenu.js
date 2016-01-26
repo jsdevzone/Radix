@@ -13,7 +13,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
-<<<<<<< HEAD
 import { Window } from 'ux/window/window';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Customer } from 'app/lookups/customer/customer';
@@ -24,13 +23,6 @@ import { DeliveryNote } from 'app/transaction/DeliveryNote';
 import { Invoice } from 'app/transaction/Invoice';
 import { ProFormaInvoice } from 'app/transaction/ProFormaInvoice';
 import { PurchaseOrder } from 'app/purchase/PurchaseOrder'
-=======
-
-import { Window } from 'ux/window/window';
-import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
-import { Customer } from 'app/lookups/customer/customer';
-
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
 /**
  * Application Menu
  *
@@ -45,13 +37,8 @@ export class ApplicationMenu extends React.Component {
         super(args);
     }
 
-<<<<<<< HEAD
-    onMenuClick(className) {
-        Window.show(<PurchaseOrder />, { title: className, height: 500, width: 700 });
-=======
     onMenuClick() {
         Window.show(<Customer/>, { title: 'Customer', height: 500, width: 700 });
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
     }
 
     /**
@@ -61,14 +48,11 @@ export class ApplicationMenu extends React.Component {
     render() {
         return (
             <div className="page-header position-relative appmenu">
-                <Toolbar>
+              <Toolbar>
                     <ToolbarItem text="Party Master" icon="fa-th">
                         <div className="x-menu">
-<<<<<<< HEAD
-                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this,"PurchaseOrder")}>
-=======
+                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this)} />
                             <div className="x-menu-item">
->>>>>>> 5e4075ac19ec99d1671e7ea026093f99610fb30a
                                 <u> </u>
                                 <span className="x-menu-text">Company</span>
                                 <span className="shortcut">Ctrl + C</span>
@@ -78,14 +62,14 @@ export class ApplicationMenu extends React.Component {
                                 <span className="x-menu-text">Financial Year</span>
                                 <span className="shortcut">Ctrl + F</span>
                             </div>
-                            <div className="x-menu-divider"/>
+                            <div className="x-menu-divider" />
                             <div className="x-menu-item" onClick={this.onMenuClick.bind(this)}>
                                 <u><i className="fa fa-user" style={{ color: '#62B2FF'}} /> </u>
                                 <span className="x-menu-text">Customer</span>
                                 <span className="shortcut" >Ctrl + O</span>
 
                             </div>
-                            <div className="x-menu-divider"/>
+                            <div className="x-menu-divider" />
                             <div className="x-menu-item">
 
                                 <u><i className="fa fa-th" style={{ color: '#DF5138'}} /> </u>
@@ -96,7 +80,7 @@ export class ApplicationMenu extends React.Component {
                                 <u> </u>
                                 <span className="x-menu-text">Stock</span>
                             </div>
-                            <div className="x-menu-divider"/>
+                            <div className="x-menu-divider" />
                             <div className="x-menu-item">
 
                                 <u> </u>
