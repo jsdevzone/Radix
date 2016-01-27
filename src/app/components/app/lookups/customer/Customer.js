@@ -73,8 +73,13 @@ import { TextField } from 'ux/forms/TextField';
                              <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
                                  Email & Social Media
                              </div>
-                             <TextField label="Email" labelWidth={75}  placeholder="name@domain.com" />
-                             <TextField label="Website"  labelWidth={75} width={350}  placeholder="http://www.customerdomain.com" />
+                             <TextField label="Email"  placeholder="name@domain.com" />
+                             <TextField label="Website"  width={350}  placeholder="http://www.customerdomain.com" />
+                                 <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
+                                     Other Details
+                                 </div>
+                                 <TextField label="Opening Balance"  placeholder="name@domain.com" />
+                                 <TextField label="Credit Limit" width={350}  placeholder="http://www.customerdomain.com" />
                          </div>
                      </div>
                  </div>
