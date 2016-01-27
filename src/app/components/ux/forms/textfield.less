@@ -1,0 +1,61 @@
+.p-form-item {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: separate;
+    margin-bottom: 8px;
+
+    .p-form-item-label {
+        color: black;
+        font: normal 12px/14px tahoma,arial,verdana,sans-serif;
+        min-height: 22px;
+        padding-top: 4px;
+        padding-right: 5px;
+        display: table-cell;
+        overflow: hidden;
+    }
+
+    .p-form-item-body {
+        min-height: 22px;
+        height: 100%;
+        vertical-align: middle;
+        display: table-cell;
+
+        & > .p-form-trigger-wrap {
+            height: 100%;
+
+            & > .p-form-text-wrap {
+                height: 100%;
+            }
+        }
+    }
+
+    .p-form-text-wrap {
+        display: table-cell;
+        overflow: hidden;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #b5b8c8;
+    }
+
+    .p-form-trigger-wrap {
+        display: table;
+        width: 100%;
+    }
+
+    .p-form-text {
+        color: black;
+        padding: 1px 3px 2px 3px;
+        background-color: white;
+        background-image: url('http://dev.sencha.com/extjs/5.0.0/examples/kitchensink/gray-en/resources/images/form/text-bg.gif');
+        font: normal 12px/17px tahoma,arial,verdana,sans-serif;
+        min-height: 17px;
+        border: 0;
+        margin: 0;
+        display: block;
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 100%;
+        outline: none;
+    }
+}
