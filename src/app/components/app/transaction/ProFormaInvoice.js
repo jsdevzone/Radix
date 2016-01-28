@@ -14,7 +14,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 import { DetailPanel } from 'ux/panel/detailPanel';
-import { FormToolbar } from 'ux/toolbar/formToolbar'
+import { FormToolbar } from 'ux/toolbar/formToolbar';
+import { TextField } from 'ux/forms/TextField';
 /**
  * Custom Class Header
  *
@@ -38,126 +39,76 @@ import { FormToolbar } from 'ux/toolbar/formToolbar'
       * @render
       * @return {View} view
       */
-     render() {
-         return (
-             <div>
-               <FormToolbar />
-                 <div style={{padding: 10}}>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 100}}>
-                         Number:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input placeholder="#0001" type="text" style={{ height: 20,marginLeft:5,width:100}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Sales Order:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input placeholder="0001" type="text" style={{ height: 20,marginTop: 5,width:125}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Created On:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input placeholder="dd-mm-yy" type="text" style={{ height: 20,width:125}}  />
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                        <div style={{ display: 'table-cell', width: 107}}>
-                        Customer:
+      render() {
+          return (
+              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
+                <FormToolbar />
+                 <div style={{padding: 10, margin: 5, border: 'solid 1px #D1D1D1'}}>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Number" width={200} placeholder="0001" />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Sales Order" width={225} labelWidth={100} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Created On" width={200} labelWidth={70} placeholder="dd-mm-yy" />
+                          </div>
+                      </div>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Customer" width={330} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Purchase No" width={305} labelWidth={80} />
+                          </div>
+                      </div>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Contact Name" width={330} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Quotation No" width={305} labelWidth={80} />
+                          </div>
+                      </div>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Project" width={330} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Executive" width={305} labelWidth={80} />
+                          </div>
+                      </div>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Payment Term" width={330} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Delivery Term" width={305} labelWidth={80} />
+                          </div>
+                      </div>
+                      <DetailPanel>
+                      </DetailPanel>
+                      <div style={{display: 'table',marginTop: 10}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Freight" width={200} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Customs" width={200} labelWidth={80} />
+                          </div>
                         </div>
-                        <div style={{ display: 'table-cell'}}>
-                          <input type="text" style={{ height: 20,width:230}}  />
-                        </div>
-                        <div style={{ display: 'table-cell', width: 105, paddingLeft: 10}}>
-                        Customer PO:
-                        </div>
-                        <div style={{ display: 'table-cell'}}>
-                          <input type="text" style={{ height: 20,width:232}}  />
-                        </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 98}}>
-                         Contact:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input  type="text" style={{ height: 20,marginLeft:5,width:230}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Quotation No:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input  type="text" style={{ height: 20,width:232}}  />
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 98}}>
-                         Executive:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input type="text" style={{ height: 20,marginLeft:5,width:230}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Project Name:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,width:232}}  />
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 100}}>
-                         Payment Terms:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input type="text" style={{ height: 20,marginLeft:5,width:230}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Delivery Terms:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,width:232}}  />
-                         </div>
-                     </div>
-                     <DetailPanel>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Total Amount" width={200} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="GL Account" width={200} labelWidth={80} />
+                          </div>
+                      </div>
+                      <TextField label="Amount In Words" width={410} />
+                </div>
 
-                     </DetailPanel>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 100}}>
-                         Transportation:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input type="text" style={{ height: 20,marginLeft:5,width:100}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 70, paddingLeft: 10}}>
-                         Customs:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,marginTop: 5,width:125}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 38}}>
-                         General Ledger:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,width:125}}  />
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 100}}>
-                         In Words:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input type="text" style={{ height: 20,marginLeft:5,width:308}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 38}}>
-                         Total Amount:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,width:125}}  />
-                         </div>
-                     </div>
-                   </div>
-                 </div>
-        );
-     }
- }
+              </div>
+          );
+      }
+  }

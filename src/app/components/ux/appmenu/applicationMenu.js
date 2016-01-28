@@ -38,7 +38,7 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<Customer/>, { title: 'Customer', height: 500, width: 700 });
+        Window.show(<DeliveryNote />, { title: 'DeliveryNote', height: 500, width: 700 });
     }
 
     /**

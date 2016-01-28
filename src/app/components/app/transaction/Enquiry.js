@@ -8,13 +8,14 @@
  * Radix can not be copied and/or distributed without the express
  * permission of Palmtrix Solutions, Cochin.
  */
- 
+
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 import { DetailPanel } from 'ux/panel/detailPanel';
-import { FormToolbar } from 'ux/toolbar/formToolbar'
+import { FormToolbar } from 'ux/toolbar/formToolbar';
+import { TextField } from 'ux/forms/TextField';
 /**
  * Custom Class Header
  *
@@ -38,89 +39,33 @@ import { FormToolbar } from 'ux/toolbar/formToolbar'
       * @render
       * @return {View} view
       */
-     render() {
-         return (
-             <div>
-               <FormToolbar />
-                 <div style={{padding: 10}}>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 100}}>
-                         Enquiry No:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                             <input placeholder="#0001" type="text" style={{ height: 20,marginLeft:5,width:100}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Created On:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input placeholder="dd-mm-yy" type="text" style={{ height: 20,marginLeft:5,width:125}}  />
-                         </div>
-                         <div style={{ display: 'table-cell', width: 100, paddingLeft: 10}}>
-                         Reference:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                           <input type="text" style={{ height: 20,marginLeft:5,width:125}}  />
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 95}}>
-                         Name:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                               <select style={{ height: 10, marginLeft:5, width:315, fontSize: 15}}>
-                                 <option value="volvo"></option>
-                                 <option value="saab">Saab</option>
-                                 <option value="opel">Opel</option>
-                                 <option value="audi">Audi</option>
-                               </select>
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 95}}>
-                         Name:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                               <select style={{ height: 10, marginLeft:5, width:315, fontSize: 15}}>
-                                 <option value="volvo"></option>
-                                 <option value="saab">Saab</option>
-                                 <option value="opel">Opel</option>
-                                 <option value="audi">Audi</option>
-                               </select>
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 95}}>
-                         Name:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                               <select style={{ height: 10, marginLeft:5, width:315, fontSize: 15}}>
-                                 <option value="volvo"></option>
-                                 <option value="saab">Saab</option>
-                                 <option value="opel">Opel</option>
-                                 <option value="audi">Audi</option>
-                               </select>
-                         </div>
-                     </div>
-                     <div style={{marginBottom: 6}}>
-                         <div style={{ display: 'table-cell', width: 95}}>
-                         Name:
-                         </div>
-                         <div style={{ display: 'table-cell'}}>
-                               <select style={{ height: 10, marginLeft:5, width:315, fontSize: 15}}>
-                                 <option value="volvo"></option>
-                                 <option value="saab">Saab</option>
-                                 <option value="opel">Opel</option>
-                                 <option value="audi">Audi</option>
-                               </select>
-                         </div>
-                     </div>
-                     <DetailPanel>
+      render() {
+          return (
+              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
+                <FormToolbar />
+                 <div style={{padding: 10, margin: 5, border: 'solid 1px #D1D1D1'}}>
+                      <div style={{display: 'table'}}>
+                          <div style={{marginBottom: 6, display:'table-cell'}}>
+                              <TextField label="Enquiry No" width={200} placeholder="0001" />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Reference" width={225} labelWidth={70} />
+                          </div>
+                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
+                              <TextField label="Created On" width={200} labelWidth={70} placeholder="dd-mm-yy" />
+                          </div>
+                      </div>
+                      <TextField label="Customer" width={435} />
+                      <TextField label="Contact Name" width={435} />
+                      <TextField label="Project" width={435} />
+                      <TextField label="Executive" width={435} />
 
-                     </DetailPanel>
-                   </div>
-                 </div>
+                        <DetailPanel>
 
-             );
-     }
- }
+                           </DetailPanel>
+                  </div>
+
+                  </div>
+              );
+      }
+  }
