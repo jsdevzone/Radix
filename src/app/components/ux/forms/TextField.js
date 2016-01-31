@@ -35,7 +35,10 @@ import './textfield.less';
      }
 
      onChange() {
-
+         let input = this.refs.inputEl;
+         if(this.props.onChange) {
+             this.props.onChange(input.value);
+         }
      }
 
      /**
@@ -57,7 +60,7 @@ import './textfield.less';
                  <div className="p-form-item-body">
                     <div className="p-form-trigger-wrap">
                         <div className="p-form-text-wrap">
-                            <input className="p-form-text" onFocus={this.onFocus.bind(this)} placeholder={this.props.placeholder} />
+                            <input className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.props.value} placeholder={this.props.placeholder} />
                         </div>
                     </div>
                 </div>

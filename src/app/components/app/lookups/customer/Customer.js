@@ -22,7 +22,28 @@ import { TextField } from 'ux/forms/TextField';
         /**
          * @state
          */
-         this.state = {};
+         this.state = {
+            customer: {}
+         };
+     }
+
+     changeValues(value, field) {
+        let customer = this.state.customer;
+        customer[field] = value;
+        this.setState({ customer: customer });
+        console.log(this.state.customer)
+     }
+
+     saveCustomer() {
+         var service = "http://localhost:10946/api/customer/save";
+         var EntityManager = new breeze.EntityManager(service);
+         EntityManager.fetchMetadata().then(function() {
+             var customer = EntityManager.createEntity('Customers', this.state.customer);
+             EntityManager.addEntity(customer);
+             EntityManager.saveChanges();
+         })
+
+
      }
 
      /**
@@ -32,15 +53,15 @@ import { TextField } from 'ux/forms/TextField';
      render() {
          return (
              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
-               <FormToolbar />
+               <FormToolbar onSave={this.saveCustomer.bind(this)} />
                <div style={{height: 60, backgroundColor:'#FFF', borderBottom: 'solid 1px #D1D1D1'}}>
                </div>
                 <div style={{padding: 10, margin: 10, border: 'solid 1px #D1D1D1'}}>
                      <div style={{marginBottom: 6}}>
-                         <TextField label="CustomerId" width={220} placeholder="#CR256330" />
+                         <TextField value={this.state.customer.CustomerId} onChange={(value) => { this.changeValues(value, 'CustomerId') }} label="CustomerId" width={220} placeholder="#CR256330" />
                      </div>
                      <div style={{marginBottom: 6}}>
-                         <TextField label="Name" width={420} placeholder="Customer Full Name" />
+                         <TextField value={this.state.customer.Name} onChange={(value) => { this.changeValues(value, 'Name') }} label="Name" width={420} placeholder="Customer Full Name" />
                      </div>
 
                      <div style={{display: 'table'}}>
@@ -48,7 +69,7 @@ import { TextField } from 'ux/forms/TextField';
                              <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
                                  Address & Location
                              </div>
-                             <TextField label="Address 1" width={350} placeholder="Address" />
+                             <TextField value={this.state.customer.Name} label="Address 1" width={350} placeholder="Address" />
                              <TextField label="Address 2" width={350} placeholder="Address" />
                              <TextField label="City" width={300} placeholder="City" />
                              <TextField label="Country" width={300} placeholder="Country" />

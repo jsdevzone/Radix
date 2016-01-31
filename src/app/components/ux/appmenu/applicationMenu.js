@@ -12,7 +12,10 @@ import { SalesOrder } from 'app/transaction/SalesOrder';
 import { DeliveryNote } from 'app/transaction/DeliveryNote';
 import { Invoice } from 'app/transaction/Invoice';
 import { ProFormaInvoice } from 'app/transaction/ProFormaInvoice';
-import { PurchaseOrder } from 'app/purchase/PurchaseOrder'
+import { PurchaseOrder } from 'app/purchase/PurchaseOrder';
+import { Material } from 'app/lookups/Material';
+import { Product } from 'app/lookups/Product';
+import { ChartOfAccount } from 'app/accounts/ChartOfAccount';
 /**
  * Application Menu
  *
@@ -28,7 +31,7 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<DeliveryNote />, { title: 'DeliveryNote', height: 500, width: 700 });
+        Window.show(<Customer />, { title: 'Customer', height: 500, width: 800 });
     }
 
     /**

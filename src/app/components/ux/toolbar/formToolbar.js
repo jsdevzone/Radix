@@ -40,7 +40,7 @@
                    <span>Edit</span>
                </a>
                <span className="p-toolbar-separator" />
-               <a className="p-toolbar-button">
+               <a className="p-toolbar-button" onClick={this.props.onSave}>
                    <i className="fa fa-floppy-o" />
                    <span>Save</span>
                </a>
