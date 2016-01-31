@@ -1,13 +1,3 @@
-/**
- * Radix Accounting System
- * @author Jasim
- * @company Palmtrix Solutions, Cochin
- *
- * Copyright (C) 2015-2016 Palmtrix Solutions <info@palmtrix.com>
- *
- * Radix can not be copied and/or distributed without the express
- * permission of Palmtrix Solutions, Cochin.
- */
  'use strict';
 
 
