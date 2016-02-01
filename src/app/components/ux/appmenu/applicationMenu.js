@@ -16,6 +16,9 @@ import { PurchaseOrder } from 'app/purchase/PurchaseOrder';
 import { Material } from 'app/lookups/Material';
 import { Product } from 'app/lookups/Product';
 import { ChartOfAccount } from 'app/accounts/ChartOfAccount';
+import { Grade } from 'app/lookups/Grade';
+import { MaterialRequisition } from 'app/purchase/MaterialRequisition';
+import { RequestQuotation } from 'app/purchase/RequestQuotation';
 /**
  * Application Menu
  *

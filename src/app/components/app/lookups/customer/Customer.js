@@ -35,14 +35,30 @@ import { TextField } from 'ux/forms/TextField';
      }
 
      saveCustomer() {
-         var service = "http://localhost:10946/api/customer/save";
+        var service = "http://localhost:19377/breeze/radix/";
          var EntityManager = new breeze.EntityManager(service);
          EntityManager.fetchMetadata().then(function() {
-             var customer = EntityManager.createEntity('Customers', this.state.customer);
+            /* var customer = EntityManager.createEntity('Customers', this.state.customer);
              EntityManager.addEntity(customer);
-             EntityManager.saveChanges();
+             EntityManager.saveChanges();*/
+             var query = breeze.EntityQuery.from('Customers');
+             EntityManager.executeQuery(query).then(data=>{console.log(data)})
          })
-
+        /* var data = this.state.customer;
+         $.ajax({
+            url: 'http://localhost:10946/api/customer/save',
+            data : data,
+            type: 'POST',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (data) {
+                //WriteResponses(data);
+                console.log(data);
+            },
+            error: function (x, y, z) {
+                alert(x + '\n' + y + '\n' + z);
+            }
+        });*/
 
      }
 

@@ -1,14 +1,3 @@
-
-/**
- * Radix Accounting System
- * @author Jasim
- * @company Palmtrix Solutions, Cochin
- *
- * Copyright (C) 2015-2016 Palmtrix Solutions <info@palmtrix.com>
- *
- * Radix can not be copied and/or distributed without the express
- * permission of Palmtrix Solutions, Cochin.
- */
  'use strict';
 
 var path = require('path');
@@ -72,8 +61,8 @@ var config = module.exports = {
 		    { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader?sourceMap", "css-loader?sourceMap") },
 			{ test: /\.html$/, loader: 'raw' },
 			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
-      		{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
-			{ test: /\.(png|jpg|jpeg|gif|svg?$)/, loader: "file-loader" },
+      		{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=fonts/[name].[ext]" },
+            { test: /\.(png|jpg|jpeg|gif|svg?$)/, loader: "file-loader?name=images/[name].[ext]" },
 			{
 			   test: /\.scss$/,
 			   loaders: ["style", "css?sourceMap", "sass?sourceMap"]

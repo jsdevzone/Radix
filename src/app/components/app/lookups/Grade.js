@@ -34,11 +34,26 @@ import { TextField } from 'ux/forms/TextField';
      }
 
      saveGrade() {
-         var service = "http://localhost:19377/breeze/radix/";
+         /*var service = "http://localhost:19377/breeze/radix/";
          var EntityManager = new breeze.EntityManager(service);
          var grade = EntityManager.createEntity('Grade', this.state.grade);
          EntityManager.addEntity(grade);
-         EntityManager.saveChanges();
+         EntityManager.saveChanges();*/
+         var data = this.state.grade;
+         $.ajax({
+            url: 'http://localhost:10946/api/grade/save',
+            data : data,
+            type: 'POST',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (data) {
+                //WriteResponses(data);
+                console.log(data);
+            },
+            error: function (x, y, z) {
+                alert(x + '\n' + y + '\n' + z);
+            }
+        });
      }
 
      /**
