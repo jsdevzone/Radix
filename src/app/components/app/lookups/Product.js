@@ -25,23 +25,37 @@ import { TextField } from 'ux/forms/TextField';
          this.state = {
             product: {}
          };
+         var query = new breeze.EntityQuery.from('Customer');
+         EntityManager.executeQuery(query)
      }
 
      changeValues(value, field) {
         let product = this.state.product;
         product[field] = value;
         this.setState({ product: product });
-        //console.log(this.state.customer)
      }
 
      saveProduct() {
-         var service = "http://localhost:19377/breeze/radix/";
-         var EntityManager = new breeze.EntityManager(service);
-         var product = EntityManager.createEntity('Products', this.state.product);
-         EntityManager.addEntity(product);
-         EntityManager.saveChanges();
+         if(this.state.product.entityAspect){
+             this.state.product.entityAspect.entityState = breeze.EntityState.Modified;
+         }
+         else{
+              let product = EntityManager.createEntity('Product', this.state.product);
+              EntityManager.addEntity(product);
+         }
+         EntityManager.saveChanges().then(abc=> {
+             this.setState({ product: abc.entities[0]})
+         })
      }
 
+     onDelete() {
+         if(this.state.product.entityAspect) {
+             this.state.product.entityAspect.setDeleted();
+             EntityManager.saveChanges().then(()=>{
+                 this.setState({ product:{}})
+             })
+         }
+     }
      /**
       * @render
       * @return {View} view
@@ -49,7 +63,7 @@ import { TextField } from 'ux/forms/TextField';
      render() {
          return (
              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
-               <FormToolbar onSave={this.saveProduct.bind(this)} />
+               <FormToolbar onSave={this.saveProduct.bind(this)} onDelete={this.onDelete.bind(this)} />
                <div style={{height: 60, backgroundColor:'#FFF', borderBottom: 'solid 1px #D1D1D1'}}>
                </div>
                 <div style={{padding: 10, margin: 10, border: 'solid 1px #D1D1D1'}}>

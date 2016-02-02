@@ -19,6 +19,7 @@ import { ChartOfAccount } from 'app/accounts/ChartOfAccount';
 import { Grade } from 'app/lookups/Grade';
 import { MaterialRequisition } from 'app/purchase/MaterialRequisition';
 import { RequestQuotation } from 'app/purchase/RequestQuotation';
+import { ItemSize } from 'app/lookups/ItemSize';
 /**
  * Application Menu
  *
@@ -34,7 +35,7 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<Customer />, { title: 'Customer', height: 500, width: 800 });
+        Window.show(<Material />, { title: 'Material', height: 500, width: 800 });
     }
 
     /**

@@ -6,6 +6,7 @@ import EventEmitter from 'eventemitter3';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
 import { FormToolbar } from 'ux/toolbar/formToolbar'
 import { TextField } from 'ux/forms/TextField';
+import { EntityManager } from 'core/EntityManager';
 /**
  * Custom Class Header
  *
@@ -35,31 +36,10 @@ import { TextField } from 'ux/forms/TextField';
      }
 
      saveCustomer() {
-        var service = "http://localhost:19377/breeze/radix/";
-         var EntityManager = new breeze.EntityManager(service);
-         EntityManager.fetchMetadata().then(function() {
-            /* var customer = EntityManager.createEntity('Customers', this.state.customer);
-             EntityManager.addEntity(customer);
-             EntityManager.saveChanges();*/
-             var query = breeze.EntityQuery.from('Customers');
-             EntityManager.executeQuery(query).then(data=>{console.log(data)})
-         })
-        /* var data = this.state.customer;
-         $.ajax({
-            url: 'http://localhost:10946/api/customer/save',
-            data : data,
-            type: 'POST',
-            dataType: 'json',
-            crossDomain: true,
-            success: function (data) {
-                //WriteResponses(data);
-                console.log(data);
-            },
-            error: function (x, y, z) {
-                alert(x + '\n' + y + '\n' + z);
-            }
-        });*/
-
+         let data = this.state.customer;
+         data.CustomerDetails = null//customer details here
+        let customer = EntityManager.createEntity('Cusomter', data);
+        EntityManager.saveChanges();        
      }
 
      /**

@@ -6,6 +6,7 @@ import EventEmitter from 'eventemitter3';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
 import { FormToolbar } from 'ux/toolbar/formToolbar'
 import { TextField } from 'ux/forms/TextField';
+import { EntityManager } from 'core/EntityManager';
 /**
  * Custom Class Header
  *
@@ -25,6 +26,8 @@ import { TextField } from 'ux/forms/TextField';
          this.state = {
             itemSize: {}
          };
+         var query = new breeze.EntityQuery.from('ItemSize');
+         EntityManager.executeQuery(query);
      }
 
      changeValues(value, field) {
@@ -34,13 +37,26 @@ import { TextField } from 'ux/forms/TextField';
      }
 
      saveItemSize() {
-         var service = "http://localhost:19377/breeze/radix/";
-         var EntityManager = new breeze.EntityManager(service);
-         var itemSize = EntityManager.createEntity('ItemSize', this.state.itemSize);
-         EntityManager.addEntity(itemSize);
-         EntityManager.saveChanges();
+         if(this.state.itemSize.entityAspect){
+             this.state.itemSize.entityAspect.entityState = breeze.EntityState.Modified;
+         }
+         else{
+              let itemSize = EntityManager.createEntity('ItemSize', this.state.itemSize);
+              EntityManager.addEntity(itemSize);
+         }
+         EntityManager.saveChanges().then(abc=> {
+             this.setState({ itemSize: abc.entities[0]})
+         })
      }
 
+     onDelete() {
+         if(this.state.itemSize.entityAspect) {
+             this.state.itemSize.entityAspect.setDeleted();
+             EntityManager.saveChanges().then(()=>{
+                 this.setState({ itemSize: {}})
+             })
+         }
+     }
      /**
       * @render
       * @return {View} view
@@ -48,7 +64,7 @@ import { TextField } from 'ux/forms/TextField';
      render() {
          return (
              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
-               <FormToolbar onSave={this.saveItemSize.bind(this)} />
+               <FormToolbar onSave={this.saveItemSize.bind(this)} onDelete={this.onDelete.bind(this)} />
                <div style={{height: 60, backgroundColor:'#FFF', borderBottom: 'solid 1px #D1D1D1'}}>
                </div>
                 <div style={{padding: 10, margin: 10, border: 'solid 1px #D1D1D1'}}>

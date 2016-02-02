@@ -6,7 +6,7 @@
   "scripts": {
     "dev-server": "webpack-dev-server --progress --colors --port 3001 --inline",
     "hot-dev-server": "webpack-dev-server --config webpack-hot-dev-server.config.js --hot --progress --colors --port 2992 --inline",
-    "build": "webpack --config webpack.config.js --progress --profile --colors",
+    "build": "webpack --config webpack.config.js --progress --profile --colors --watch",
     "server": "npm run dev-server"
   },
   "author": "",

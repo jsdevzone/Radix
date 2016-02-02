@@ -3,7 +3,6 @@
 
  import React from 'react';
  import ReactDOM from 'react-dom';
-
  /**
   * @class FormToolbar
   * @extends React.Component
@@ -50,7 +49,7 @@
                    <span>Cancel</span>
                </a>
                <span className="p-toolbar-separator" />
-               <a className="p-toolbar-button">
+               <a className="p-toolbar-button" onClick={this.props.onDelete}>
                    <i className="fa fa-trash" />
                    <span>Delete</span>
                </a>
@@ -67,7 +66,7 @@
                    <span>Help</span>
                </a>
                <div style={{flex:1}} />
-               <a className="p-button" style={{marginRight: 5}}>
+               <a className="p-button" style={{marginRight: 5}} onClick={this.props.onList}>
                    <i className="fa fa-list" />
                    <span>List</span>
                </a>

@@ -6,6 +6,7 @@ import EventEmitter from 'eventemitter3';
 import { TabPanel, Tab } from 'ux/tab/tabPanel';
 import { FormToolbar } from 'ux/toolbar/formToolbar'
 import { TextField } from 'ux/forms/TextField';
+import { EntityManager } from 'core/EntityManager';
 /**
  * Custom Class Header
  *
@@ -25,6 +26,8 @@ import { TextField } from 'ux/forms/TextField';
          this.state = {
             grade: {}
          };
+         var query = new breeze.EntityQuery.from('Customer');
+         EntityManager.executeQuery(query);
      }
 
      changeValues(value, field) {
@@ -34,45 +37,43 @@ import { TextField } from 'ux/forms/TextField';
      }
 
      saveGrade() {
-         /*var service = "http://localhost:19377/breeze/radix/";
-         var EntityManager = new breeze.EntityManager(service);
-         var grade = EntityManager.createEntity('Grade', this.state.grade);
-         EntityManager.addEntity(grade);
-         EntityManager.saveChanges();*/
-         var data = this.state.grade;
-         $.ajax({
-            url: 'http://localhost:10946/api/grade/save',
-            data : data,
-            type: 'POST',
-            dataType: 'json',
-            crossDomain: true,
-            success: function (data) {
-                //WriteResponses(data);
-                console.log(data);
-            },
-            error: function (x, y, z) {
-                alert(x + '\n' + y + '\n' + z);
-            }
-        });
+
+         if(this.state.grade.entityAspect){
+             this.state.grade.entityAspect.entityState = breeze.EntityState.Modified;
+         }
+         else{
+              let grade = EntityManager.createEntity('Grade', this.state.grade);
+              EntityManager.addEntity(material);
+         }
+         EntityManager.saveChanges().then(abc=> {
+             this.setState({ grade: abc.entities[0]})
+         })
      }
 
+     onDelete() {
+         if(this.state.grade.entityAspect){
+             this.state.grade.entityAspect.setDeleted();
+             EntityManager.saveChanges().then(()=>{
+                 this.setState({ grade:{}})
+             })
+         }
+     }
      /**
       * @render
       * @return {View} view
       */
-     render() {
-         return (
-             <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
-               <FormToolbar onSave={this.saveGrade.bind(this)} />
-               <div style={{height: 60, backgroundColor:'#FFF', borderBottom: 'solid 1px #D1D1D1'}}>
-               </div>
-                <div style={{padding: 10, margin: 10, border: 'solid 1px #D1D1D1'}}>
-
-                     <div style={{marginBottom: 6}}>
-                         <TextField value={this.state.grade.Name} onChange={(value) => { this.changeValues(value, 'Name') }} label="Grade" width={420} />
-                     </div>
-                 </div>
-                 </div>
-             );
-     }
- }
+      render() {
+          return (
+              <div style={{backgroundColor: '#F8F8F8', height:'100%'}}>
+                <FormToolbar onSave={this.saveGrade.bind(this)} onDelete={this.onDelete.bind(this)} />
+                <div style={{height: 60, backgroundColor:'#FFF', borderBottom: 'solid 1px #D1D1D1'}}>
+                </div>
+                 <div style={{padding: 10, margin: 10, border: 'solid 1px #D1D1D1'}}>
+                      <div style={{marginBottom: 6}}>
+                          <TextField value={this.state.grade.Name} onChange={(value) => { this.changeValues(value, 'Name') }} label="Grade Name" width={420} placeholder="Grade Name" />
+                      </div>
+                  </div>
+                  </div>
+              );
+      }
+  }

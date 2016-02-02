@@ -9,6 +9,8 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
+var outputPath = "F:\\workspace asp\\JavaScript\\Reactjs\\RadixController\\RadixController\\app";
+
 var config = module.exports = {
 	context: __dirname,
 	devtool: 'source-map',
@@ -34,7 +36,7 @@ var config = module.exports = {
 	},
 
 	output: {
-		path: './build/public',
+		path: outputPath,//'./build/public',
 		filename: '[name].js',
 		courceMapFilename: '[name].map.js',
 		chunkFileName: '[id].chunk.js'
@@ -48,6 +50,7 @@ var config = module.exports = {
 			'styles': path.join(__dirname, './src/assets/less'),
             'app':  path.join(__dirname, './src/app/components/app'),
 			'ux':  path.join(__dirname, './src/app/components/ux'),
+            'core': path.join(__dirname, './src/app/core'),
 			'lib': path.join(__dirname, './src/lib'),
             'animatecss': path.join(__dirname, './node_modules/animate.css/animate.css')
    		},
@@ -60,7 +63,7 @@ var config = module.exports = {
 			{ test: /\.json$/, loader: 'json-loader' },
 		    { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader?sourceMap", "css-loader?sourceMap") },
 			{ test: /\.html$/, loader: 'raw' },
-			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+			{ test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?name=fonts/[name].[ext]&limit=10000&mimetype=application/font-woff" },
       		{ test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=fonts/[name].[ext]" },
             { test: /\.(png|jpg|jpeg|gif|svg?$)/, loader: "file-loader?name=images/[name].[ext]" },
 			{
