@@ -21,13 +21,15 @@ import './textfield.less';
         /**
          * @state
          */
-         this.state = {};
+         this.state = {
+             isFocused: false
+         };
 
          this.defaultLabelWidth = 100;
      }
 
      onFocus() {
-
+         this.setState({ isFocused: true });
      }
 
      onBlur() {
@@ -46,6 +48,9 @@ import './textfield.less';
       * @return {View} view
       */
      render() {
+         let triggerClassName = "p-form-trigger p-form-trigger-default";
+         if(this.state.isFocused)
+            triggerClassName += " p-form-trigger-focus";
          let label =(
              <label className="p-form-item-label" style={{ width: this.props.labelWidth || this.defaultLabelWidth }}>
                  <span>{this.props.label}</span>
@@ -59,11 +64,10 @@ import './textfield.less';
                  { label }
                  <div className="p-form-item-body">
                     <div className="p-form-trigger-wrap">
-                        <div className="p-form-text-wrap">                            
-                            <select className="p-form-text">
-                                <option onChange={this.onChange.bind(this)} value={this.props.value}>Value 1</option>
-                            </select>
+                        <div className="p-form-text-wrap">
+                            <input className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.props.value} placeholder={this.props.placeholder} />
                         </div>
+                        <div className={triggerClassName} />
                     </div>
                 </div>
             </div>

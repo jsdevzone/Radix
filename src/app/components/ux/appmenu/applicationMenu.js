@@ -6,7 +6,6 @@ import EventEmitter from 'eventemitter3';
 import { Window } from 'ux/window/window';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Customer } from 'app/lookups/customer/customer';
-import { Enquiry } from 'app/transaction/Enquiry';
 import { Quotation } from 'app/transaction/Quotation';
 import { SalesOrder } from 'app/transaction/SalesOrder';
 import { DeliveryNote } from 'app/transaction/DeliveryNote';
@@ -35,7 +34,11 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<Material />, { title: 'Material', height: 500, width: 800 });
+        Window.show(<Quotation />, { title: 'Quotation', width: 800, height:  500});
+    }
+
+    openWindow(component, config) {
+        Window.show(<component />, config);
     }
 
     /**
@@ -48,8 +51,8 @@ export class ApplicationMenu extends React.Component {
               <Toolbar>
                     <ToolbarItem text="Party Master" icon="fa-th">
                         <div className="x-menu">
-                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this)} />
-                            <div className="x-menu-item">
+                            <div className="x-menu-item"/>
+                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this)}>
                                 <u> </u>
                                 <span className="x-menu-text">Company</span>
                                 <span className="shortcut">Ctrl + C</span>
@@ -60,7 +63,7 @@ export class ApplicationMenu extends React.Component {
                                 <span className="shortcut">Ctrl + F</span>
                             </div>
                             <div className="x-menu-divider" />
-                            <div className="x-menu-item" onClick={this.onMenuClick.bind(this)}>
+                            <div className="x-menu-item" onClick={() => { this.openWindow(Customer, { title: 'Customer', width: 600, height:  500})}}>
                                 <u><i className="fa fa-user" style={{ color: '#62B2FF'}} /> </u>
                                 <span className="x-menu-text">Customer</span>
                                 <span className="shortcut" >Ctrl + O</span>

@@ -19,18 +19,17 @@ import { EntityManager } from 'core/EntityManager';
         /**
          * @state
          */
-         this.state = {
-             material:{}
+         this.state = {         
          };
-         var query = new breeze.EntityQuery.from('Customer');
-         EntityManager.executeQuery(query)
+        /* var query = new breeze.EntityQuery.from('Customer');
+         EntityManager.executeQuery(query)*/
      }
 
      componentDidMount() {
-        var data = EntityQuery.from('Material');
+        /*var data = EntityQuery.from('Material');
         EntityManager.executeQuery(data).then(abc=>{
             this.setState({ material: abc.entities[0]})
-        })
+        })*/
      }
 
      /**
@@ -49,8 +48,6 @@ import { EntityManager } from 'core/EntityManager';
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{this.state.material.MaterialCode}</td>
-                            <td>{this.state.material.Name}</td>
                         </tr>
                     </tbody>
                 </table>
