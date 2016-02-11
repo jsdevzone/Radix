@@ -36,7 +36,7 @@ var config = module.exports = {
 	},
 
 	output: {
-		path: outputPath,//'./build/public',
+		path: './build',
 		filename: '[name].js',
 		courceMapFilename: '[name].map.js',
 		chunkFileName: '[id].chunk.js'

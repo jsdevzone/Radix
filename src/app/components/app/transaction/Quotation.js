@@ -28,6 +28,17 @@ import { EntityManager } from 'core/EntityManager';
          this.state = {
              quotation: {}
          };
+
+this.customers = [
+    { CustomerId: 1, Name: 'Customer Name' },
+    { CustomerId: 2, Name: 'Customer Details' },
+    { CustomerId: 3, Name: 'Customer Section' }
+];
+
+for(var i = 0; i < 50; i++) {
+    this.customers.push({ CustomerId: 3+i, Name: 'Customer '+ i});
+}
+
          var query = new breeze.EntityQuery.from('Customer');
          EntityManager.executeQuery(query).then(data=>{this.setState({ customers: data })})
      }
@@ -109,7 +120,7 @@ import { EntityManager } from 'core/EntityManager';
                       <ComboField data={this.state.customers} displayField='Name' valueField="CustomerId" label="Customer" width={645} />
                         <div style={{display: 'table'}}>
                             <div style={{marginBottom: 6, display:'table-cell'}}>
-                                <ComboField data={this.state.CustomerContacts} displayField='Name' valueField="CustomerContactId" label="Contact Name" width={330} />
+                                <ComboField data={this.customers} displayField='Name' valueField="CustomerId" label="Contact Name" width={330} />
                             </div>
                             <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
                                 <TextField label="Customer PO" width={305} labelWidth={100} />

@@ -5,10 +5,6 @@ import EventEmitter from 'eventemitter3';
 
 import './textfield.less';
 
-const data = [
-    'One',
-    'Two','Three','Four','Five'
-]
 
 /**
  * Custom Class Header
@@ -29,10 +25,30 @@ const data = [
          this.state = {
              isFocused: false,
              isExpanded: false,
-             items: {}
+             items: {},
+             value: null,
+             hoverIndex: 0
          };
 
          this.defaultLabelWidth = 100;
+     }
+
+     componentDidMount() {
+
+     }
+
+     onKeyDown(event) {
+         if(event.keyCode == 40) {
+             this.setState({ hoverIndex: this.state.hoverIndex + 1});
+         }
+
+         if(event.keyCode == 38) {
+             this.setState({ hoverIndex: this.state.hoverIndex - 1});
+         }
+
+         if(event.keyCode == 13) {
+             this.setState({ value: this.props.data[this.state.hoverIndex][this.props.displayField], isExpanded: false });
+         }
      }
 
      onFocus() {
@@ -43,6 +59,16 @@ const data = [
 
      }
 
+     expand() {
+         if(!this.state.isExpanded)
+            this.setState({ isExpanded: true });
+     }
+
+     collapse() {
+         if(this.state.isExpanded)
+            this.setState({ isExpanded: false });
+     }
+
      onChange() {
          let input = this.refs.inputEl;
          if(this.props.onChange) {
@@ -51,33 +77,40 @@ const data = [
      }
 
      onListItemClick(item) {
-         let items = this.state.items;
-         items = item.Name;
-         this.setState({ items: items});
-         console.log(items);
-         this.setState({ isExpanded: !this.state.isExpanded });
+         let value = item[this.props.displayField];
+         this.setState({ value: value, isExpanded: false });
+         this.collapse();
+     }
+
+     getList() {
+         if(this.props.data && this.props.data.length > 0) {
+             return this.props.data.map((item, index) => {
+                 let className = this.state.hoverIndex == index ? "p-list-item-hover": "";
+                 return (<li  className={className}
+                     onMouseOver={() => this.setState({ hoverIndex: index })}
+                     onClick={()=> this.onListItemClick(item)}>{item[this.props.displayField]}</li>);
+             });
+         }
+         return null;
      }
 
      renderList() {
          if(this.state.isExpanded) {
-             return (<div className="p-combo-list-wrapper">
-                 <ul>
-                     {(()=>{
-                        if(this.props.data && this.props.data.length > 0) {
-                            let listItems = [];
-                            this.props.data.map((item, index) => {
-                                listItems.push(<li onClick={()=>this.onListItemClick(item)}>{item[this.props.displayField]}</li>)
-                            });
-                            return listItems;
-                        }
-                     })()}
-                 </ul>
-             </div>);
+             return (
+                 <div className="p-combo-list-wrapper">
+                 <ul>{this.getList()}</ul>
+             </div>
+            );
          }
      }
 
+     onDocumentClick() {
+
+     }
+
      onTriggerClick() {
-         this.setState({ isExpanded: !this.state.isExpanded });
+         this.refs.inputEl.focus();
+         this.expand();
      }
 
      /**
@@ -102,7 +135,7 @@ const data = [
                  <div className="p-form-item-body">
                     <div className="p-form-trigger-wrap">
                         <div className="p-form-text-wrap">
-                            <input className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.props.items} placeholder={this.props.placeholder} />
+                            <input onKeyDown={this.onKeyDown.bind(this)} className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.state.value} placeholder={this.props.placeholder} />
                         </div>
                         <div className={triggerClassName} onClick={this.onTriggerClick.bind(this)} />
                     </div>
