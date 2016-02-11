@@ -15,11 +15,18 @@
         overflow: hidden;
     }
 
+    &:hover {
+        background: #e0e0e0;
+border-color: #bfb8b8;
+    }
+
+
     .p-form-item-body {
         min-height: 22px;
         height: 100%;
         vertical-align: middle;
         display: table-cell;
+        position: relative;
 
         & > .p-form-trigger-wrap {
             height: 100%;
@@ -81,5 +88,42 @@
     .p-form-trigger-focus {
         background-position: -51px 0;
         border-color: #a1a1a1;
+    }
+}
+
+.p-combo-list-wrapper {
+    width: 100%;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b5b8c8;
+    background: #fff;
+    z-index: 19000;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 0 3px;
+            font: normal 12px tahoma, arial, verdana, sans-serif;
+            line-height: 20px;
+            cursor: pointer;
+            cursor: hand;
+            position: relative;
+            border-width: 1px;
+            border-style: dotted;
+            border-color: #fff;
+            color: #000;
+
+            &:hover {
+                background: #e0e0e0;
+                border-color: #bfb8b8;
+            }
+
+        }
     }
 }

@@ -6,6 +6,8 @@ import EventEmitter from 'eventemitter3';
 import { DetailPanel } from 'ux/panel/detailPanel';
 import { FormToolbar } from 'ux/toolbar/formToolbar';
 import { TextField } from 'ux/forms/TextField';
+import { ComboField } from 'ux/forms/ComboField';
+import { EntityManager } from 'core/EntityManager';
 /**
  * Custom Class Header
  *
@@ -48,10 +50,10 @@ import { TextField } from 'ux/forms/TextField';
                       <TextField label="Customer" width={645} />
                         <div style={{display: 'table'}}>
                             <div style={{marginBottom: 6, display:'table-cell'}}>
-                                <TextField label="Contact Name" width={330} />
+                                <ComboField label="Contact Name" width={330} />
                             </div>
                             <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
-                                <TextField label="Quotation No" width={305} labelWidth={80} />
+                                <ComboField label="Quotation No" width={305} labelWidth={80} />
                             </div>
                         </div>
                         <div style={{display: 'table'}}>
@@ -59,15 +61,15 @@ import { TextField } from 'ux/forms/TextField';
                                 <TextField label="Project" width={330} />
                             </div>
                             <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
-                                <TextField label="Executive" width={305} labelWidth={80} />
+                                <ComboField label="Executive" width={305} labelWidth={80} />
                             </div>
                         </div>
                         <div style={{display: 'table'}}>
                             <div style={{marginBottom: 6, display:'table-cell'}}>
-                                <TextField label="Payment Term" width={330} />
+                                <ComboField label="Payment Term" width={330} />
                             </div>
                             <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
-                                <TextField label="Delivery Term" width={305} labelWidth={80} />
+                                <ComboField label="Delivery Term" width={305} labelWidth={80} />
                             </div>
                         </div>
                         <DetailPanel>
@@ -85,7 +87,7 @@ import { TextField } from 'ux/forms/TextField';
                                 <TextField label="Total Amount" width={200} />
                             </div>
                             <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 10}}>
-                                <TextField label="GL Account" width={200} labelWidth={80} />
+                                <ComboField label="GL Account" width={200} labelWidth={80} />
                             </div>
                         </div>
                           <TextField label="Amount In Words" width={410} />

@@ -5,6 +5,11 @@ import EventEmitter from 'eventemitter3';
 
 import './textfield.less';
 
+const data = [
+    'One',
+    'Two','Three','Four','Five'
+]
+
 /**
  * Custom Class Header
  *
@@ -22,7 +27,9 @@ import './textfield.less';
          * @state
          */
          this.state = {
-             isFocused: false
+             isFocused: false,
+             isExpanded: false,
+             items: {}
          };
 
          this.defaultLabelWidth = 100;
@@ -41,6 +48,36 @@ import './textfield.less';
          if(this.props.onChange) {
              this.props.onChange(input.value);
          }
+     }
+
+     onListItemClick(item) {
+         let items = this.state.items;
+         items = item.Name;
+         this.setState({ items: items});
+         console.log(items);
+         this.setState({ isExpanded: !this.state.isExpanded });
+     }
+
+     renderList() {
+         if(this.state.isExpanded) {
+             return (<div className="p-combo-list-wrapper">
+                 <ul>
+                     {(()=>{
+                        if(this.props.data && this.props.data.length > 0) {
+                            let listItems = [];
+                            this.props.data.map((item, index) => {
+                                listItems.push(<li onClick={()=>this.onListItemClick(item)}>{item[this.props.displayField]}</li>)
+                            });
+                            return listItems;
+                        }
+                     })()}
+                 </ul>
+             </div>);
+         }
+     }
+
+     onTriggerClick() {
+         this.setState({ isExpanded: !this.state.isExpanded });
      }
 
      /**
@@ -65,10 +102,11 @@ import './textfield.less';
                  <div className="p-form-item-body">
                     <div className="p-form-trigger-wrap">
                         <div className="p-form-text-wrap">
-                            <input className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.props.value} placeholder={this.props.placeholder} />
+                            <input className="p-form-text" ref="inputEl" onFocus={this.onFocus.bind(this)} onChange={this.onChange.bind(this)} value={this.props.items} placeholder={this.props.placeholder} />
                         </div>
-                        <div className={triggerClassName} />
+                        <div className={triggerClassName} onClick={this.onTriggerClick.bind(this)} />
                     </div>
+                    { this.renderList() }
                 </div>
             </div>
          );

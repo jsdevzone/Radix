@@ -34,7 +34,7 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<Quotation />, { title: 'Quotation', width: 800, height:  500});
+        Window.show(<Quotation />, { title: 'Quotation', width: 800, height:  600});
     }
 
     openWindow(component, config) {
