@@ -48,6 +48,10 @@ import './textfield.less';
 
          if(event.keyCode == 13) {
              this.setState({ value: this.props.data[this.state.hoverIndex][this.props.displayField], isExpanded: false });
+             if(this.props.onSelect)
+             {
+                 this.props.onSelect(this.props.data[this.state.hoverIndex]);
+             }
          }
      }
 
@@ -80,6 +84,10 @@ import './textfield.less';
          let value = item[this.props.displayField];
          this.setState({ value: value, isExpanded: false });
          this.collapse();
+         if(this.props.onSelect)
+         {
+             this.props.onSelect(item);
+         }
      }
 
      getList() {
