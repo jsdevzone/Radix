@@ -1,0 +1,347 @@
+.p-navbar {
+    background: #2dc3e8;
+    position: relative;
+    background-clip: padding-box;
+    padding-left: 15px;
+}
+
+.p-navbar .p-navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    text-shadow: none;
+    padding: 2px 0 2px 0;
+    font-weight: 200;
+    height: 45px;
+    line-height: 20;
+}
+
+.p-small {
+    font-size: 85%;
+}
+
+.p-navbar .p-navbar-brand small img {
+    height: 40px;
+    width: 177px;
+}
+
+.p-navbar .p-sidebar-collapse {
+    text-align: center;
+    padding: 0;
+    z-index: 2;
+    width: 35px;
+    height: 45px;
+}
+
+.p-navbar .p-sidebar-collapse .p-collapse-icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    padding: 11px 5px;
+    line-height: 22px;
+    position: relative;
+    -webkit-transition: background-color 0.218s ease;
+    -moz-transition: background-color 0.218s ease;
+    -o-transition: background-color 0.218s ease;
+    transition: background-color 0.218s ease;
+    -webkit-transition: -webkit-box-shadow 0.218s ease;
+    -moz-transition: -moz-box-shadow 0.218s ease;
+    -o-transition: box-shadow 0.218s ease;
+    transition: box-shadow 0.218s ease;
+    -webkit-transition: color 0.318s ease;
+    -moz-transition: color 0.318s ease;
+    -o-transition: color 0.318s ease;
+    transition: color 0.318s ease;
+}
+
+.p-navbar .p-sidebar-collapse:hover {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.p-navbar-notification {
+    height: 45px;
+    min-width: 50px;
+    display: inline-block;
+}
+
+
+.p-navbar-notification .p-notification-icon {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    -webkit-transition: line-height 0.3s ease;
+    -moz-transition: line-height 0.3s ease;
+    -o-transition: line-height 0.3s ease;
+    transition: line-height 0.3s ease;
+}
+
+.p-app-toolbar {
+    background: linear-gradient(to right, #f4f4f4, #f4f4f4);
+}
+
+.p-app-toolbar.x-toolbar-default {
+    border-width: 0;
+    padding-left: 25px;
+    border-bottom-width: 1px;
+    border-bottom-color: #e5e5e5;
+}
+
+.p-user-profile {
+    border-bottom: solid 1px #eeeeee;
+    padding: 10px;
+    background: linear-gradient(to right, #f4f4f4, #FFFFFF);
+}
+
+.p-module-sidebar {
+    background-color: #fbfbfb;
+}
+
+
+.p-module-sidebar-right {
+    background-color: #fbfbfb;
+    border-left: solid 1px #e1e1e1;
+}
+
+.p-module-sidebar-inner {
+        padding-left: 40px;
+        border-left: 1px solid transparent;
+        border-top: 1px solid transparent;
+        box-shadow: 0 -1px 0 #dedede;
+        -webkit-transform-origin: 17px 18px;
+        -moz-transform-origin: 17px 18px;
+        -o-transform-origin: 17px 18px;
+        -ms-transform-origin: 17px 18px;
+        transform-origin: 17px 18px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        background: #f1f1f1;
+        height: 40px;
+        white-space: nowrap;
+        top: -1px;
+        width: 800px;
+        z-index: 10000;
+        float: left;
+}
+
+.p-module-button {
+    padding: 6px 10px 10px 10px;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: default;
+    margin-left: -1px;
+    margin-right: 2px;
+    font-family: Helvetica, Arial;
+    font-size: 13px;
+    color: #333333;
+    text-shadow: 0 0 1px white;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.p-module-button i {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.p-module-button.p-active {
+    background-color: white;
+    color: #333333;
+    background: #fbfbfb;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    box-shadow: -1px 0 transparent inset, -1px 0 transparent;
+    margin-left: -2px;
+    margin-right: 1px;
+    vertical-align: top;
+    margin-top: -2px;
+    padding-top: 11px;
+    height: 36px;
+}
+
+.p-module-sidebar .x-grid-item {
+    background-color: #fbfbfb;
+}
+
+.p-home-tabpanel .x-tab-bar-default-top {
+        background: '#F3f3f3';
+        background-image: -webkit-linear-gradient(top, #f3f3f3, #f3f3f3);
+
+     border-top-width: 1px;
+     border-top-color: #ECECEC;
+     border-left-width: 0;
+     border-right-width: 0;
+}
+
+.p-home-tabpanel .x-tab-default-top {
+     border-radius: 0;
+     padding: 5px 9px;
+}
+
+.p-home-tabpanel .x-tab-bar-default-horizontal {
+    height: auto;
+    padding-top: 5px;
+}
+
+.p-home-tabpanel .x-panel-body-default {
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.p-dashboard-widget .x-panel-header-default {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f1f1f1), color-stop(1, #f1f1f1));
+    border-top-width: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.x-btn-default-toolbar-small-over {
+    background-image: none;
+    background: none;
+    border-radius: 0;
+    background: #fff;
+    border-color: #ECECEC;
+}
+
+.x-menu-body {
+    background-color: #FFF;
+}
+
+.x-menu-item-active {
+    background-image: none;
+    background-color: #318AD7;
+    background-image: none;
+    border-radius: 0;
+    border-width: 0;
+}
+
+.x-menu-item-active .x-menu-item-text {
+    color: #FFF;
+}
+
+.x-btn-default-toolbar-small-menu-active, .x-btn-default-toolbar-small-pressed {
+    background: #fff;
+    border-color: #ECECEC;
+}
+
+.p-tile {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 5px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.p-tile-icon {
+    margin-bottom: 6px;
+    font-size: 25px !important;
+}
+
+.p-welcome {
+    padding: 10px;
+}
+
+.p-welcome h3 {
+    font-weight: normal;
+    font-size: 12px;
+    color: gray;
+    border-bottom: 1px solid #DEDEDE;
+    padding-bottom: 4px;
+    margin-bottom: 9px;
+}
+
+.x-tab-default .x-tab-glyph {
+    font-size: 14px;
+    opacity: 1;
+}
+
+.p-app-brand {
+    margin: 0;
+    margin-left: 56px;
+    color: #555;
+    font-size: 19px;
+    font-family: fantasy;
+}
+
+.p-dashboard-count {
+    padding-right: 5px;
+    padding-left: 5px;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    float: left;
+    min-width: 200px;
+}
+
+.p-dashboard-count .p-title {
+    color: #37363e;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.p-dashboard-count .p-title .fa {
+    font-size: 15px;
+    color: #000;
+    margin-right: 4px;
+    opacity: 0.4;
+}
+
+.p-dashboard-count h3 {
+    font-size: 28px;
+    font-weight: bold !important;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    line-height: normal;
+    margin: 1px 0;
+    margin: 5px 10px;
+    color: #999;
+}
+
+.p-color-down {
+    color: #ef4836;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+.p-color-up {
+    color: #26a65b;
+}
+
+.p-user-info {
+    font-family: 'Tahoma', sans-serif;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.p-user-info .p-welcome-text {
+    display: block;
+    font-size: 12px;
+}
+
+.p-user-info a {
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.p-user-profile-action {
+    padding: 5px;
+    font-size: 15px;
+    color: #31A6D7;
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}

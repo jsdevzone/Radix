@@ -39,8 +39,39 @@ import { EntityManager } from 'core/EntityManager';
          let data = this.state.customer;
          data.CustomerDetails = null//customer details here
         let customer = EntityManager.createEntity('Cusomter', data);
-        EntityManager.saveChanges();        
+        EntityManager.saveChanges();
      }
+
+    renderLocationInfo() {
+        return (
+            <div>
+            { this.renderSectionTitle('Address & Location') }
+            <TextField value={this.state.customer.Name} label="Address 1" width={350} placeholder="Address" />
+            <TextField label="Address 2" width={350} placeholder="Address" />
+            <TextField label="City" width={300} placeholder="City" />
+            <TextField label="Country" width={300} placeholder="Country" />
+            </div>
+        );
+    }
+
+    renderSectionTitle(title) {
+        return (
+            <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
+                { title }
+            </div>
+        );
+    }
+
+    renderContactInfo() {
+        return (
+            <div>
+            { this.renderSectionTitle('Phone & Fax') }
+            <TextField label="Phone" width={300} placeholder="+91 952 63 6633" />
+            <TextField label="Fax" width={300} placeholder="+91 952 63 6633" />
+            <TextField label="Mobile" width={300} placeholder="+91 952 63 6633" />
+            </div>
+        );
+    }
 
      /**
       * @render
@@ -56,25 +87,17 @@ import { EntityManager } from 'core/EntityManager';
                      <div style={{marginBottom: 6}}>
                          <TextField value={this.state.customer.CustomerId} onChange={(value) => { this.changeValues(value, 'CustomerId') }} label="CustomerId" width={220} placeholder="#CR256330" />
                      </div>
-                     <div style={{marginBottom: 6}}>
-                         <TextField value={this.state.customer.Name} onChange={(value) => { this.changeValues(value, 'Name') }} label="Name" width={420} placeholder="Customer Full Name" />
+                     <div style={{marginBottom: 6, display: 'flex', flexDirection: 'row'}}>
+                         <TextField value={this.state.customer.Name}
+                            onChange={(value) => { this.changeValues(value, 'Name') }}
+                            label="Name" width={450} placeholder="Customer Full Name" />
+                            <a style={{marginLeft: 5, height: 15}} className="p-button"><span>Show Contacts</span></a>
                      </div>
 
                      <div style={{display: 'table'}}>
                          <div style={{marginBottom: 6, display:'table-cell'}}>
-                             <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
-                                 Address & Location
-                             </div>
-                             <TextField value={this.state.customer.Name} label="Address 1" width={350} placeholder="Address" />
-                             <TextField label="Address 2" width={350} placeholder="Address" />
-                             <TextField label="City" width={300} placeholder="City" />
-                             <TextField label="Country" width={300} placeholder="Country" />
-                             <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
-                                 Phone & Fax
-                             </div>
-                             <TextField label="Phone" width={230} placeholder="+91952636633" />
-                             <TextField label="Fax" width={230} placeholder="+91952636633" />
-                             <TextField label="Mobile" width={230} placeholder="+91952636633" />
+                             { this.renderLocationInfo() }
+                             { this.renderContactInfo() }
                          </div>
                          <div style={{marginBottom: 6, display:'table-cell', paddingLeft: 20}}>
                              <div style={{borderBottom: 'dashed 1px #D1D1D1', paddingTop: 10, paddingBottom: 5, marginBottom: 10}}>
@@ -87,6 +110,7 @@ import { EntityManager } from 'core/EntityManager';
                                  </div>
                                  <TextField label="Opening Balance"  placeholder="name@domain.com" />
                                  <TextField label="Credit Limit" width={350}  placeholder="http://www.customerdomain.com" />
+                                 <TextField label="Delivery Method" width={300} placeholder="Delivery method" />
                          </div>
                      </div>
                  </div>

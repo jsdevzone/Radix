@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
 import KendoWindow from 'imports?$=jquery!kendo-ui-core/src/kendo.window';
 
-//import './window.scss';
+import './window.less';
 
 /**
  * Custom Class Header
@@ -13,7 +13,7 @@ import KendoWindow from 'imports?$=jquery!kendo-ui-core/src/kendo.window';
  * @class Window
  * @extends React.Component
  */
- export var Window  = {
+ export var WindowManager  = {
 
      /**
       * Default Width

@@ -118,7 +118,11 @@ import './textfield.less';
 
      onTriggerClick() {
          this.refs.inputEl.focus();
-         this.expand();
+         if(!this.state.isExpanded)
+            this.expand();
+         else {
+             this.collapse();
+         }
      }
 
      /**

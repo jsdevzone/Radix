@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventEmitter from 'eventemitter3';
-import { Window } from 'ux/window/window';
+import { WindowManager } from 'ux/window/window';
 import { Toolbar, ToolbarItem, ToolbarSeparator } from 'ux/toolbar/toolbar';
 import { Customer } from 'app/lookups/customer/customer';
 import { Quotation } from 'app/transaction/Quotation';
@@ -34,11 +34,11 @@ export class ApplicationMenu extends React.Component {
     }
 
     onMenuClick() {
-        Window.show(<Quotation />, { title: 'Quotation', width: 800, height:  600});
+        WindowManager.show(<Quotation />, { title: 'Quotation', width: 800, height:  600});
     }
 
     openWindow(component, config) {
-        Window.show(<component />, config);
+        WindowManager.show(component, config);
     }
 
     /**
@@ -63,7 +63,7 @@ export class ApplicationMenu extends React.Component {
                                 <span className="shortcut">Ctrl + F</span>
                             </div>
                             <div className="x-menu-divider" />
-                            <div className="x-menu-item" onClick={() => { this.openWindow(Customer, { title: 'Customer', width: 600, height:  500})}}>
+                            <div className="x-menu-item" onClick={() => { this.openWindow(<Customer />, { title: 'Customer', width: 600, height:  500})}}>
                                 <u><i className="fa fa-user" style={{ color: '#62B2FF'}} /> </u>
                                 <span className="x-menu-text">Customer</span>
                                 <span className="shortcut" >Ctrl + O</span>
